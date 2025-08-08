@@ -19,7 +19,10 @@
 
     <!-- Gallery Section -->
     <section id="gallery">
-        <h2>Gallery</h2>
+        <h2>Gallery</h2>![photo2](https://github.com/user-attachments/assets/7b2b457d-b3f9-4833-9f53-5166a4c1ba24)
+![Photo1](https://github.com/user-attachments/assets/2c06bc90-d231-4dac-9197-98d83695870c)
+![photo3](https://github.com/user-attachments/assets/3e4c415f-9104-471b-a9f4-e55656539019)
+
         <div class="grid">
             <img src="images/photo1.jpg" alt="Sample Photo 1">
             <img src="images/photo2.jpg" alt="Sample Photo 2">
