@@ -67,7 +67,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Your Photography Name</p>
+        <p>&copy; 2025 Indelible Imprints</p>
     </footer>
 </body>
 </html>
