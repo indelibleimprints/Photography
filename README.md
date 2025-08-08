@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Photography Name</title>
+    <title>Indelible Imprints</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Your Photography Name</h1>
+        <h1>Indelible Imprints</h1>
         <nav>
             <a href="#gallery">Gallery</a>
             <a href="#pricing">Pricing</a>
