@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Your Photography Name</h1>
+        <h1>Indelible Imprints</h1>
         <nav>
             <a href="#gallery">Gallery</a>
             <a href="#pricing">Pricing</a>
