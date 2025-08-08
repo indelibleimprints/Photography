@@ -11,7 +11,15 @@
     <header>
         <h1>Indelible Imprints</h1>
         <nav>
-            <a href="#gallery">Gallery</a>
+            <a href="#gallery">Gallery</a>![20211030_204041](https://github.com/user-attachments/assets/0b5a7ec0-276a-4ccd-9043-5f5666c51070)
+![20211016_192740](https://github.com/user-attachments/assets/7388a2a8-7f18-4237-88bf-a40013aab9ea)
+![20211010_102409](https://github.com/user-attachments/assets/611acae2-0076-4843-896e-3de86e22b5b4)
+![20210905_064717](https://github.com/user-attachments/assets/f4bc2a20-4ed1-4865-b8d5-c08f41a34f5c)
+![20210904_194318](https://github.com/user-attachments/assets/23e114fc-4b7c-4577-acf0-1ebddec2cd0d)
+![photo3](https://github.com/user-attachments/assets/aa0b099c-1ff9-47a0-8b18-0286ac06ab0e)
+![photo2](https://github.com/user-attachments/assets/4786525e-81d1-46ce-a70d-7a4444a6ef57)
+![Photo1](https://github.com/user-attachments/assets/515f8be3-993c-444b-b60f-ed2e2fa7c513)
+
             <a href="#pricing">Pricing</a>
             <a href="#contact">Contact</a>
         </nav>
