@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('images/background.jpg'); /* Path to your image */
+    background-image: url('background.jpg'); /* Path to your image */
     background-size: cover;        /* Make it fill the screen */
     background-repeat: no-repeat;  /* Don’t tile the image */
     background-attachment: fixed;  /* Stay in place when scrolling */
@@ -109,4 +109,5 @@ footer {
     color: white;
     margin-top: 2rem;
 }
+
 
