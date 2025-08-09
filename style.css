@@ -38,9 +38,11 @@ h2 {
     padding: 20px;
 }
 
-.grid img {
-    width: 100%;
-    border-radius: 5px;
+ .grid img {
+    max-width: 100%;   /* Never overflow the container */
+    height: auto;      /* Keep aspect ratio */
+    display: block;    /* Removes small bottom spacing */
+    border-radius: 8px; /* Optional: smooth corners */
 }
 
 /* Pricing */
@@ -109,5 +111,6 @@ footer {
     color: white;
     margin-top: 2rem;
 }
+
 
 
