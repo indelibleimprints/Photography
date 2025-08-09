@@ -1,7 +1,15 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
+    background-image: url('images/background.jpg'); /* Path to your image */
+    background-size: cover;        /* Make it fill the screen */
+    background-repeat: no-repeat;  /* Don’t tile the image */
+    background-attachment: fixed;  /* Stay in place when scrolling */
+    background-position: center;   /* Center the image */
+    font-family: Arial, sans-serif;
+     margin: 0;
     background: #f8f9fa;
+
 }
 
 header {
@@ -101,3 +109,4 @@ footer {
     color: white;
     margin-top: 2rem;
 }
+
