@@ -1,87 +1,63 @@
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indelible Imprints</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <img src="images/logo.png" alt="Indelible Imprints Logo" class="logo">
+      <ul>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-/* Header */
-header {
-  background: #000;
-  color: #fff;
-  padding: 0.5rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  <!-- Hero Section with Sunset Background -->
+  <section class="hero">
+    <h2>Indelible Imprints</h2>
+    <p>Capturing moments that last forever – weddings, portraits, and events.</p>
+    <a href="#gallery" class="btn">View Gallery</a>
+  </section>
 
-.logo {
-  height: 50px;
-  width: auto;
-}
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="grid">
+      <img src="images/photo3.jpg" alt="Clouds in the Sky">
+      <img src="images/sample1.jpg" alt="Sample Photo 1">
+      <img src="images/sample2.jpg" alt="Sample Photo 2">
+      <img src="images/sample3.jpg" alt="Sample Photo 3">
+    </div>
+  </section>
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing">
+    <h2>Pricing</h2>
+    <ul>
+      <li><strong>Portrait Session:</strong> $200</li>
+      <li><strong>Wedding Package:</strong> $1200</li>
+      <li><strong>Event Coverage:</strong> $500</li>
+    </ul>
+  </section>
 
-nav a {
-  color: white;
-  text-decoration: none;
-}
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <p>Phone: (123) 456-7890</p>
+  </section>
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 6rem 2rem;
-  background: url('images/photo2.jpg') no-repeat center/cover;
-  color: white;
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero .btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background: #ff6600;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-/* Gallery */
-.gallery .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
-}
-
-/* Pricing + Contact */
-.pricing, .contact {
-  padding: 2rem;
-  text-align: center;
-}
-
-/* Footer */
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 1.5rem 1rem;
-}
-
-.footer-logo {
-  height: 40px;
-  margin-bottom: 0.5rem;
-}
+  <!-- Footer -->
+  <footer>
+    <img src="images/logo.png" alt="Indelible Imprints Logo" class="footer-logo">
+    <p>&copy; 2025 Indelible Imprints. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
