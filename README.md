@@ -1,72 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indelible Imprints</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Indelible Imprints</h1>
-        <nav>
-            <a href="#gallery">Gallery</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
 
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="grid">
-            <img src="images/photo1.jpg" alt="Sample Photo 1">
-            <img src="images/photo2.jpg" alt="Sample Photo 2">
-            <img src="images/photo3.jpg" alt="Sample Photo 3">
-            <!-- Add more images as needed -->
-        </div>
-    </section>
+/* Header */
+header {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    <!-- Pricing Section -->
-    <section id="pricing">
-        <h2>Pricing</h2>
-        <div class="pricing-container">
-            <div class="pricing-card">
-                <h3>Basic Package</h3>
-                <p class="price">$100</p>
-                <p>1 Hour Session<br>10 Edited Photos<br>Online Gallery</p>
-            </div>
-            <div class="pricing-card">
-                <h3>Standard Package</h3>
-                <p class="price">$250</p>
-                <p>2 Hour Session<br>25 Edited Photos<br>Online Gallery + Prints</p>
-            </div>
-            <div class="pricing-card">
-                <h3>Premium Package</h3>
-                <p class="price">$500</p>
-                <p>4 Hour Session<br>50 Edited Photos<br>Album + Online Gallery</p>
-            </div>
-        </div>
-    </section>
+.logo {
+  height: 50px;
+  width: auto;
+}
 
-    <!-- Contact & Socials -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" placeholder="Malinda Sneary" required>
-            <input type="email" placeholder="mkeuthk1971@gmail.com" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <div class="socials">
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="mailto:you@example.com">Email</a>
-        </div>
-    </section>
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
 
-    <footer>
-        <p>&copy; 2025 Indelible Imprints</p>
-    </footer>
-</body>
-</html>
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: url('images/photo2.jpg') no-repeat center/cover;
+  color: white;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #ff6600;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Gallery */
+.gallery .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Pricing + Contact */
+.pricing, .contact {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
