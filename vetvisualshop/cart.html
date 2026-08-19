@@ -34,8 +34,11 @@
   </footer>
 
   <script src="products.js"></script>
+  <script src="streamItem.js"></script>
   <script src="cart.js"></script>
   <script>
+    const ALL_ITEMS = [...PRODUCTS, STREAM_ITEM];
+
     function render() {
       const cart = getCart();
       const itemsEl = document.getElementById("cart-items");
@@ -50,7 +53,7 @@
 
       let total = 0;
       itemsEl.innerHTML = cart.map(entry => {
-        const product = PRODUCTS.find(p => p.id === entry.id);
+        const product = ALL_ITEMS.find(p => p.id === entry.id);
         if (!product) return "";
         const lineTotal = product.price * entry.qty;
         total += lineTotal;
@@ -97,7 +100,7 @@
 
       const checkoutBtn = document.getElementById("checkout-btn");
       const lines = cart.map(entry => {
-        const product = PRODUCTS.find(p => p.id === entry.id);
+        const product = ALL_ITEMS.find(p => p.id === entry.id);
         return product ? `${entry.qty} x ${product.name} - $${(product.price * entry.qty).toFixed(2)}` : "";
       }).join("%0D%0A");
       checkoutBtn.href = `mailto:vetvisualstoryteller@gmail.com?subject=Vet%20Visual%20Shop%20Order&body=${lines}%0D%0A%0D%0ASubtotal:%20$${total.toFixed(2)}%0D%0AShipping:%20${shipping === 0 ? "Free" : "$" + shipping.toFixed(2)}%0D%0ATotal:%20$${grandTotal.toFixed(2)}`;

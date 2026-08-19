@@ -19,6 +19,9 @@
     <a class="cart-link" href="cart.html">Cart <span id="cart-count">0</span></a>
   </header>
 
+  <!-- Made on Stream: fixed featured spot, not part of the scrollable grid -->
+  <div class="stream-bar" id="stream-bar"></div>
+
   <!-- Scrollable Shop Index -->
   <main class="shop-index">
     <p class="shop-intro">Tap an item to inquire.</p>
@@ -33,6 +36,7 @@
   </footer>
 
   <script src="products.js"></script>
+  <script src="streamItem.js"></script>
   <script src="cart.js"></script>
   <script>
     const grid = document.getElementById("shop-grid");
@@ -49,6 +53,24 @@
       `;
       grid.appendChild(item);
     });
+
+    const streamBar = document.getElementById("stream-bar");
+    streamBar.innerHTML = `
+      <span class="stream-badge">Made on Stream</span>
+      <img src="${STREAM_ITEM.image}" alt="${STREAM_ITEM.name}">
+      <div class="stream-info">
+        <h3>${STREAM_ITEM.name}</h3>
+        <p class="price">$${STREAM_ITEM.price.toFixed(2)}</p>
+      </div>
+      <button id="stream-add-btn" class="btn">Add to Cart</button>
+      <span id="stream-add-confirm" class="stream-add-confirm"></span>
+    `;
+    document.getElementById("stream-add-btn").addEventListener("click", () => {
+      addToCart(STREAM_ITEM.id, 1);
+      updateCartBadge();
+      document.getElementById("stream-add-confirm").textContent = "Added!";
+    });
+
     updateCartBadge();
   </script>
 </body>

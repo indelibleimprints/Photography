@@ -56,6 +56,51 @@ header h1 a {
   background: rgba(245, 216, 137, 0.1);
 }
 
+/* Made on Stream: fixed featured spot below the header */
+.stream-bar {
+  background: rgba(0, 0, 0, 0.75);
+  border-bottom: 1px solid rgba(245, 216, 137, 0.3);
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stream-badge {
+  color: #F5D889;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.stream-bar img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.stream-info {
+  flex: 1;
+  min-width: 120px;
+}
+
+.stream-info h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.stream-info .price {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.stream-add-confirm {
+  color: #6fdc8c;
+  font-size: 0.9rem;
+}
+
 /* Scrollable Shop Index */
 .shop-index {
   max-width: 1000px;
