@@ -16,6 +16,13 @@ body {
   z-index: -1;
 }
 
+/* Sticky wrapper: keeps header + stream bar pinned together while content scrolls */
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 /* Header */
 header {
   background: #000;
@@ -23,9 +30,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }
 
 header h1 {
