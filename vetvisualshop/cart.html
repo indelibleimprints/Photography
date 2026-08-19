@@ -77,6 +77,7 @@
         <p class="cart-line">Shipping: ${shippingLabel}</p>
         <p class="cart-total">Total: $${grandTotal.toFixed(2)}</p>
         <a class="btn checkout-btn" id="checkout-btn">Checkout via Email</a>
+        <a class="btn venmo-btn" id="venmo-btn" target="_blank" rel="noopener">Pay with Venmo</a>
       `;
 
       document.querySelectorAll(".cart-qty").forEach(input => {
@@ -100,6 +101,10 @@
         return product ? `${entry.qty} x ${product.name} - $${(product.price * entry.qty).toFixed(2)}` : "";
       }).join("%0D%0A");
       checkoutBtn.href = `mailto:vetvisualstoryteller@gmail.com?subject=Vet%20Visual%20Shop%20Order&body=${lines}%0D%0A%0D%0ASubtotal:%20$${total.toFixed(2)}%0D%0AShipping:%20${shipping === 0 ? "Free" : "$" + shipping.toFixed(2)}%0D%0ATotal:%20$${grandTotal.toFixed(2)}`;
+
+      const venmoBtn = document.getElementById("venmo-btn");
+      const venmoNote = encodeURIComponent("Vet Visual Shop order");
+      venmoBtn.href = `https://venmo.com/u/Chad-Sneary?txn=pay&amount=${grandTotal.toFixed(2)}&note=${venmoNote}`;
 
       updateCartBadge();
     }
