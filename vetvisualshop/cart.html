@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | Vet Visual Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Static Background (fixed, does not scroll) -->
+  <div class="shop-background"></div>
+
+  <!-- Header -->
+  <header>
+    <h1><a href="index.html">Vet Visual Shop</a></h1>
+    <a class="cart-link" href="cart.html">Cart <span id="cart-count">0</span></a>
+  </header>
+
+  <!-- Cart -->
+  <main class="shop-index">
+    <a class="back-link" href="index.html">&larr; Continue shopping</a>
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div id="cart-summary" class="cart-summary"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <img src="../images/logo.jpeg" alt="Indelible Imprints Logo" class="footer-logo">
+    <p>&copy; 2025 Indelible Imprints. All Rights Reserved.</p>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script>
+    function render() {
+      const cart = getCart();
+      const itemsEl = document.getElementById("cart-items");
+      const summaryEl = document.getElementById("cart-summary");
+
+      if (cart.length === 0) {
+        itemsEl.innerHTML = `<p>Your cart is empty.</p>`;
+        summaryEl.innerHTML = "";
+        updateCartBadge();
+        return;
+      }
+
+      let total = 0;
+      itemsEl.innerHTML = cart.map(entry => {
+        const product = PRODUCTS.find(p => p.id === entry.id);
+        if (!product) return "";
+        const lineTotal = product.price * entry.qty;
+        total += lineTotal;
+        return `
+          <div class="cart-row">
+            <img src="${product.image}" alt="${product.name}">
+            <div class="cart-row-info">
+              <h3>${product.name}</h3>
+              <p class="price">$${product.price.toFixed(2)} each</p>
+            </div>
+            <input type="number" class="cart-qty" min="1" value="${entry.qty}" data-id="${product.id}">
+            <p class="line-total">$${lineTotal.toFixed(2)}</p>
+            <button class="remove-btn" data-id="${product.id}">Remove</button>
+          </div>
+        `;
+      }).join("");
+
+      const shipping = calculateShipping(total);
+      const grandTotal = total + shipping;
+      const shippingLabel = shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`;
+
+      summaryEl.innerHTML = `
+        <p class="cart-line">Subtotal: $${total.toFixed(2)}</p>
+        <p class="cart-line">Shipping: ${shippingLabel}</p>
+        <p class="cart-total">Total: $${grandTotal.toFixed(2)}</p>
+        <a class="btn checkout-btn" id="checkout-btn">Checkout via Email</a>
+      `;
+
+      document.querySelectorAll(".cart-qty").forEach(input => {
+        input.addEventListener("change", e => {
+          const newQty = Math.max(1, parseInt(e.target.value, 10) || 1);
+          updateCartQty(parseInt(e.target.dataset.id, 10), newQty);
+          render();
+        });
+      });
+
+      document.querySelectorAll(".remove-btn").forEach(btn => {
+        btn.addEventListener("click", e => {
+          removeFromCart(parseInt(e.target.dataset.id, 10));
+          render();
+        });
+      });
+
+      const checkoutBtn = document.getElementById("checkout-btn");
+      const lines = cart.map(entry => {
+        const product = PRODUCTS.find(p => p.id === entry.id);
+        return product ? `${entry.qty} x ${product.name} - $${(product.price * entry.qty).toFixed(2)}` : "";
+      }).join("%0D%0A");
+      checkoutBtn.href = `mailto:vetvisualstoryteller@gmail.com?subject=Vet%20Visual%20Shop%20Order&body=${lines}%0D%0A%0D%0ASubtotal:%20$${total.toFixed(2)}%0D%0AShipping:%20${shipping === 0 ? "Free" : "$" + shipping.toFixed(2)}%0D%0ATotal:%20$${grandTotal.toFixed(2)}`;
+
+      updateCartBadge();
+    }
+
+    render();
+  </script>
+</body>
+</html>

@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vet Visual Shop | Indelible Imprints</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Static Background (fixed, does not scroll) -->
+  <div class="shop-background"></div>
 
+  <!-- Header -->
+  <header>
+    <h1>Vet Visual Shop</h1>
+    <a class="cart-link" href="cart.html">Cart <span id="cart-count">0</span></a>
+  </header>
+
+  <!-- Scrollable Shop Index -->
+  <main class="shop-index">
+    <p class="shop-intro">Tap an item to inquire.</p>
+
+    <div class="shop-grid" id="shop-grid"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <img src="../images/logo.jpeg" alt="Indelible Imprints Logo" class="footer-logo">
+    <p>&copy; 2025 Indelible Imprints. All Rights Reserved.</p>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script>
+    const grid = document.getElementById("shop-grid");
+    PRODUCTS.forEach(product => {
+      const item = document.createElement("a");
+      item.className = "shop-item";
+      item.href = `product.html?id=${product.id}`;
+      item.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <div class="shop-item-info">
+          <h3>${product.name}</h3>
+          <p class="price">$${product.price.toFixed(2)}</p>
+        </div>
+      `;
+      grid.appendChild(item);
+    });
+    updateCartBadge();
+  </script>
+</body>
+</html>

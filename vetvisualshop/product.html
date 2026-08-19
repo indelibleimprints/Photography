@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | Vet Visual Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Static Background (fixed, does not scroll) -->
+  <div class="shop-background"></div>
+
+  <!-- Header -->
+  <header>
+    <h1><a href="index.html">Vet Visual Shop</a></h1>
+    <a class="cart-link" href="cart.html">Cart <span id="cart-count">0</span></a>
+  </header>
+
+  <!-- Product Detail -->
+  <main class="shop-index">
+    <a class="back-link" href="index.html">&larr; Back to shop</a>
+    <div id="product-detail" class="product-detail"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <img src="../images/logo.jpeg" alt="Indelible Imprints Logo" class="footer-logo">
+    <p>&copy; 2025 Indelible Imprints. All Rights Reserved.</p>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"), 10);
+    const product = PRODUCTS.find(p => p.id === id);
+    const container = document.getElementById("product-detail");
+
+    if (!product) {
+      container.innerHTML = `<p>Item not found.</p>`;
+    } else {
+      container.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" class="product-image">
+        <div class="product-info">
+          <h2>${product.name}</h2>
+          <p class="price">$${product.price.toFixed(2)}</p>
+          <p class="product-description">${product.description}</p>
+          <div class="qty-row">
+            <label for="qty">Quantity</label>
+            <input type="number" id="qty" value="1" min="1">
+          </div>
+          <button id="add-to-cart-btn" class="btn">Add to Cart</button>
+          <p id="add-confirm" class="add-confirm"></p>
+        </div>
+      `;
+
+      document.getElementById("add-to-cart-btn").addEventListener("click", () => {
+        const qty = Math.max(1, parseInt(document.getElementById("qty").value, 10) || 1);
+        addToCart(product.id, qty);
+        updateCartBadge();
+        document.getElementById("add-confirm").textContent = "Added to cart.";
+      });
+    }
+
+    updateCartBadge();
+  </script>
+</body>
+</html>
