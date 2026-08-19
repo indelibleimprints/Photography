@@ -222,5 +222,47 @@ const PRODUCTS = [
     price: 10.00,
     image: "images/D32.jpeg",
     description: "Placeholder description. Replace with details about this print."
+  },
+  {
+    id: 33,
+    name: "T1",
+    price: 30.00,
+    image: "images/T1.jpeg",
+    description: "Dyed turquoise tagua nut hoops with a natural tagua nut and turquoise bead accent, on silver leverback ear wires."
+  },
+  {
+    id: 34,
+    name: "T2",
+    price: 30.00,
+    image: "images/T2.jpeg",
+    description: "Dyed dusty rose tagua nut hoops with a speckled natural tagua nut bead accent, on silver leverback ear wires."
+  },
+  {
+    id: 35,
+    name: "T3",
+    price: 30.00,
+    image: "images/T3.jpeg",
+    description: "Natural cream tagua nut hoops with a pearl accent bead, on silver leverback ear wires."
+  },
+  {
+    id: 36,
+    name: "T4",
+    price: 30.00,
+    image: "images/T4.jpeg",
+    description: "Dyed magenta tagua nut hoops with a large round tagua bead accent, on silver leverback ear wires."
+  },
+  {
+    id: 37,
+    name: "T5",
+    price: 30.00,
+    image: "images/T5.jpeg",
+    description: "Dyed amber tagua nut hoops with honey-toned bead accents, on silver leverback ear wires."
+  },
+  {
+    id: 38,
+    name: "T6",
+    price: 30.00,
+    image: "images/T6.jpeg",
+    description: "Dyed violet tagua nut hoops with white and amethyst bead accents, on silver leverback ear wires."
   }
 ];
