@@ -326,7 +326,7 @@ const VET_PRODUCTS = [
     name: "D41",
     price: 20.00,
     image: "/vetvisualshop/images/D41.jpeg",
-    description: "Mismatched pair: a blue teardrop and a champagne teardrop, each with a clear crystal cluster accent, on clip-on ear wires."
+    description: "Color-shifting AB glass teardrops that shift hue with the light, paired with clear crystal cluster accents, on clip-on ear wires."
   },
   {
     id: 59,
@@ -354,6 +354,6 @@ const VET_PRODUCTS = [
     name: "D45",
     price: 20.00,
     image: "/vetvisualshop/images/D45.jpeg",
-    description: "Mismatched pair: a blue fluted bead and a purple iridescent fluted bead, each in a gold filigree cap, on clip-on ear wires."
+    description: "Fluted glass beads with a color-shifting iridescent finish, set in gold filigree caps, on clip-on ear wires."
   }
 ];
