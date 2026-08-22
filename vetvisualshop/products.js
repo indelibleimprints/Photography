@@ -264,5 +264,12 @@ const VET_PRODUCTS = [
     price: 35.00,
     image: "/vetvisualshop/images/T6.jpeg",
     description: "Dyed violet tagua nut hoops with white and amethyst bead accents, on silver leverback ear wires."
+  },
+  {
+    id: 50,
+    name: "D33",
+    price: 10.00,
+    image: "/vetvisualshop/images/D33.jpeg",
+    description: "Red faceted crystal teardrops in a beaded silver setting, on silver clip-on ear wires."
   }
 ];
