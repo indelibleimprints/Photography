@@ -221,11 +221,19 @@ header h1 a {
   transform: translateY(-4px);
 }
 
+.shop-item-img-wrap {
+  position: relative;
+}
+
 .shop-item img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   display: block;
+}
+
+.shop-item.sold img {
+  opacity: 0.45;
 }
 
 .shop-item-info {

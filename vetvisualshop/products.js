@@ -39,7 +39,8 @@ const VET_PRODUCTS = [
     name: "D6",
     price: 10.00,
     image: "/vetvisualshop/images/D6.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Placeholder description. Replace with details about this print.",
+    sold: true
   },
   {
     id: 7,
@@ -221,7 +222,8 @@ const VET_PRODUCTS = [
     name: "D32",
     price: 10.00,
     image: "/vetvisualshop/images/D32.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Placeholder description. Replace with details about this print.",
+    sold: true
   },
   {
     id: 33,
@@ -333,7 +335,8 @@ const VET_PRODUCTS = [
     name: "D42",
     price: 20.00,
     image: "/vetvisualshop/images/D42.jpeg",
-    description: "Clear crystal clusters with a turquoise faceted bead accent, on clip-on ear wires."
+    description: "Clear crystal clusters with a turquoise faceted bead accent, on clip-on ear wires.",
+    sold: true
   },
   {
     id: 60,

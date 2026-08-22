@@ -11,6 +11,7 @@ const RESALE_PRODUCTS = [
     name: "R2",
     price: 15.00,
     image: "/resale/images/R2.jpeg",
-    description: "Black seed bead tassel earrings with a rhinestone pave cap bead, on silver ear wires."
+    description: "Black seed bead tassel earrings with a rhinestone pave cap bead, on silver ear wires.",
+    sold: true
   }
 ];
