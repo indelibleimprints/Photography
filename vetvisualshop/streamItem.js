@@ -55,5 +55,37 @@ const STREAM_ITEMS = [
     price: 30.00,
     image: "images/stream/S7.jpeg",
     description: "Periwinkle sea glass nugget with an iridescent AB crystal accent, on silver leverback ear wires. Made live on stream."
+  },
+  {
+    id: 46,
+    name: "Sold1",
+    price: 30.00,
+    image: "images/stream/Sold1.jpeg",
+    description: "Cobalt blue sea glass teardrops with a delicate wire heart link and iridescent AB crystal accent, on silver leverback ear wires. Made live on stream.",
+    sold: true
+  },
+  {
+    id: 47,
+    name: "Sold2",
+    price: 30.00,
+    image: "images/stream/Sold2.jpeg",
+    description: "Large faceted deep blue crystal beads with an iridescent AB crystal accent cluster, on silver leverback ear wires. Made live on stream.",
+    sold: true
+  },
+  {
+    id: 48,
+    name: "Sold3",
+    price: 30.00,
+    image: "images/stream/Sold3.jpeg",
+    description: "Elongated iridescent mother of pearl beads with a white pearl accent, on silver leverback ear wires. Made live on stream.",
+    sold: true
+  },
+  {
+    id: 49,
+    name: "Sold4",
+    price: 30.00,
+    image: "images/stream/Sold4.jpeg",
+    description: "Freeform ivory mother of pearl nuggets with an iridescent AB crystal accent cluster, on silver leverback ear wires. Made live on stream.",
+    sold: true
   }
 ];

@@ -51,21 +51,28 @@
           <h2>${product.name}</h2>
           <p class="price">$${product.price.toFixed(2)}</p>
           <p class="product-description">${product.description}</p>
-          <div class="qty-row">
-            <label for="qty">Quantity</label>
-            <input type="number" id="qty" value="1" min="1">
-          </div>
-          <button id="add-to-cart-btn" class="btn">Add to Cart</button>
-          <p id="add-confirm" class="add-confirm"></p>
+          ${product.sold ? `
+            <p class="sold-notice">This piece has sold.</p>
+            <button class="btn" disabled>Sold</button>
+          ` : `
+            <div class="qty-row">
+              <label for="qty">Quantity</label>
+              <input type="number" id="qty" value="1" min="1">
+            </div>
+            <button id="add-to-cart-btn" class="btn">Add to Cart</button>
+            <p id="add-confirm" class="add-confirm"></p>
+          `}
         </div>
       `;
 
-      document.getElementById("add-to-cart-btn").addEventListener("click", () => {
-        const qty = Math.max(1, parseInt(document.getElementById("qty").value, 10) || 1);
-        addToCart(product.id, qty);
-        updateCartBadge();
-        document.getElementById("add-confirm").textContent = "Added to cart.";
-      });
+      if (!product.sold) {
+        document.getElementById("add-to-cart-btn").addEventListener("click", () => {
+          const qty = Math.max(1, parseInt(document.getElementById("qty").value, 10) || 1);
+          addToCart(product.id, qty);
+          updateCartBadge();
+          document.getElementById("add-confirm").textContent = "Added to cart.";
+        });
+      }
     }
 
     updateCartBadge();

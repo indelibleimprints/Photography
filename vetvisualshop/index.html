@@ -62,19 +62,24 @@
     const streamScroll = document.getElementById("stream-scroll");
     STREAM_ITEMS.forEach(item => {
       const card = document.createElement("div");
-      card.className = "stream-card";
+      card.className = item.sold ? "stream-card sold" : "stream-card";
       card.innerHTML = `
         <a href="product.html?id=${item.id}" class="stream-card-link">
-          <img src="${item.image}" alt="${item.name}">
+          <div class="stream-card-img-wrap">
+            <img src="${item.image}" alt="${item.name}">
+            ${item.sold ? '<span class="sold-badge">Sold</span>' : ''}
+          </div>
           <h4>${item.name}</h4>
           <p class="price">$${item.price.toFixed(2)}</p>
         </a>
-        <button class="stream-card-add">Add</button>
+        ${item.sold ? '<button class="stream-card-add" disabled>Sold</button>' : '<button class="stream-card-add">Add</button>'}
       `;
-      card.querySelector(".stream-card-add").addEventListener("click", () => {
-        addToCart(item.id, 1);
-        updateCartBadge();
-      });
+      if (!item.sold) {
+        card.querySelector(".stream-card-add").addEventListener("click", () => {
+          addToCart(item.id, 1);
+          updateCartBadge();
+        });
+      }
       streamScroll.appendChild(card);
     });
 

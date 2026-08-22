@@ -97,13 +97,37 @@ header h1 a {
   text-decoration: none;
 }
 
+.stream-card-img-wrap {
+  position: relative;
+  width: 60px;
+  margin: 0 auto;
+}
+
 .stream-card img {
   width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 6px;
-  margin: 0 auto;
   display: block;
+}
+
+.stream-card.sold img {
+  opacity: 0.45;
+}
+
+.sold-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  background: rgba(216, 90, 48, 0.9);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  text-transform: uppercase;
 }
 
 .stream-card h4 {
@@ -132,6 +156,16 @@ header h1 a {
 
 .stream-card-add:hover {
   background: rgba(245, 216, 137, 0.15);
+}
+
+.stream-card-add:disabled {
+  border-color: #888;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.stream-card-add:disabled:hover {
+  background: none;
 }
 
 /* Scrollable Shop Index */
@@ -274,10 +308,21 @@ header h1 a {
   font-size: 1rem;
 }
 
+.btn:disabled {
+  background: #555;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
 .add-confirm {
   color: #6fdc8c;
   min-height: 1.2em;
   margin-top: 0.75rem;
+}
+
+.sold-notice {
+  color: #f0997b;
+  font-weight: bold;
 }
 
 /* Cart */
