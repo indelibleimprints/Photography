@@ -17,14 +17,14 @@ const STREAM_ITEMS = [
   {
     id: 40,
     name: "S2",
-    price: 30.00,
+    price: 35.00,
     image: "images/stream/S2.jpeg",
     description: "Graduated iridescent AB crystal beads in a cascading dangle, on silver leverback ear wires. Made live on stream."
   },
   {
     id: 41,
     name: "S3",
-    price: 30.00,
+    price: 35.00,
     image: "images/stream/S3.jpeg",
     description: "Graduated iridescent crystal beads in soft yellow, green, and blue tones, on silver leverback ear wires. Made live on stream."
   },
