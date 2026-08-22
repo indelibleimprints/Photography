@@ -58,7 +58,7 @@ const STREAM_ITEMS = [
   },
   {
     id: 46,
-    name: "Sold1",
+    name: "Cobalt Heart Drops",
     price: 30.00,
     image: "images/stream/Sold1.jpeg",
     description: "Cobalt blue sea glass teardrops with a delicate wire heart link and iridescent AB crystal accent, on silver leverback ear wires. Made live on stream.",
@@ -66,7 +66,7 @@ const STREAM_ITEMS = [
   },
   {
     id: 47,
-    name: "Sold2",
+    name: "Midnight Crystal Cascade",
     price: 30.00,
     image: "images/stream/Sold2.jpeg",
     description: "Large faceted deep blue crystal beads with an iridescent AB crystal accent cluster, on silver leverback ear wires. Made live on stream.",
@@ -74,7 +74,7 @@ const STREAM_ITEMS = [
   },
   {
     id: 48,
-    name: "Sold3",
+    name: "Iridescent Pearl Bars",
     price: 30.00,
     image: "images/stream/Sold3.jpeg",
     description: "Elongated iridescent mother of pearl beads with a white pearl accent, on silver leverback ear wires. Made live on stream.",
@@ -82,7 +82,7 @@ const STREAM_ITEMS = [
   },
   {
     id: 49,
-    name: "Sold4",
+    name: "Ivory Shell Cluster",
     price: 30.00,
     image: "images/stream/Sold4.jpeg",
     description: "Freeform ivory mother of pearl nuggets with an iridescent AB crystal accent cluster, on silver leverback ear wires. Made live on stream.",
