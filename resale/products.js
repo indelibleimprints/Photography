@@ -1,23 +1,16 @@
 const RESALE_PRODUCTS = [
   {
     id: 200,
-    name: "Product Name",
-    price: 0.00,
-    image: "/images/photo1.jpg",
-    description: "Placeholder description. Replace once real photos are ready."
+    name: "R1",
+    price: 15.00,
+    image: "/resale/images/R1.jpeg",
+    description: "Turquoise seed bead tassel earrings with a silver filigree cap bead, on silver ear wires."
   },
   {
     id: 201,
-    name: "Product Name",
-    price: 0.00,
-    image: "/images/photo2.jpg",
-    description: "Placeholder description. Replace once real photos are ready."
-  },
-  {
-    id: 202,
-    name: "Product Name",
-    price: 0.00,
-    image: "/images/photo3.jpg",
-    description: "Placeholder description. Replace once real photos are ready."
+    name: "R2",
+    price: 15.00,
+    image: "/resale/images/R2.jpeg",
+    description: "Black seed bead tassel earrings with a rhinestone pave cap bead, on silver ear wires."
   }
 ];
