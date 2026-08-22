@@ -271,5 +271,12 @@ const VET_PRODUCTS = [
     price: 10.00,
     image: "/vetvisualshop/images/D33.jpeg",
     description: "Red faceted crystal teardrops in a beaded silver setting, on silver clip-on ear wires."
+  },
+  {
+    id: 51,
+    name: "D34",
+    price: 15.00,
+    image: "/vetvisualshop/images/D34.jpeg",
+    description: "Silver crescent-swirl medallions with a hematite-toned faceted bead accent, on silver ear wires."
   }
 ];
