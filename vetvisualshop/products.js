@@ -355,5 +355,54 @@ const VET_PRODUCTS = [
     price: 20.00,
     image: "/vetvisualshop/images/D45.jpeg",
     description: "Fluted glass beads with a color-shifting iridescent finish, set in gold filigree caps, on clip-on ear wires."
+  },
+  {
+    id: 63,
+    name: "D46",
+    price: 25.00,
+    image: "/vetvisualshop/images/D46.jpeg",
+    description: "Elongated marbled lampwork glass beads in blue-grey and cream with a rust accent swirl, on ornate silver clip-on ear wires."
+  },
+  {
+    id: 64,
+    name: "D47",
+    price: 25.00,
+    image: "/vetvisualshop/images/D47.jpeg",
+    description: "Crackled batik-pattern oval beads in brown and cream, with a pearl accent, on clip-on ear wires."
+  },
+  {
+    id: 65,
+    name: "D48",
+    price: 25.00,
+    image: "/vetvisualshop/images/D48.jpeg",
+    description: "Large baroque champagne mother of pearl nuggets with a pearl accent, on silver clip-on ear wires."
+  },
+  {
+    id: 66,
+    name: "D49",
+    price: 25.00,
+    image: "/vetvisualshop/images/D49.jpeg",
+    description: "Turquoise resin discs with a silver palm tree charm, on silver ear wires."
+  },
+  {
+    id: 67,
+    name: "D50",
+    price: 25.00,
+    image: "/vetvisualshop/images/D50.jpeg",
+    description: "Carved mauve flower cutouts paired with white howlite flower clusters, on clip-on ear wires."
+  },
+  {
+    id: 68,
+    name: "D51",
+    price: 25.00,
+    image: "/vetvisualshop/images/D51.jpeg",
+    description: "Emerald-cut color-shifting AB crystal pendants with a round crystal accent, in gold-tone settings, on clip-on ear wires."
+  },
+  {
+    id: 69,
+    name: "D52",
+    price: 25.00,
+    image: "/vetvisualshop/images/D52.jpeg",
+    description: "Royal blue fabric flower tassels in gold filigree caps, on clip-on ear wires."
   }
 ];
