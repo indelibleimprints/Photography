@@ -278,5 +278,82 @@ const VET_PRODUCTS = [
     price: 15.00,
     image: "/vetvisualshop/images/D34.jpeg",
     description: "Silver crescent-swirl medallions with a hematite-toned faceted bead accent, on silver ear wires."
+  },
+  {
+    id: 52,
+    name: "D35",
+    price: 20.00,
+    image: "/vetvisualshop/images/D35.jpeg",
+    description: "Blue frosted sea glass nuggets stacked on a pale cream shell disc, on silver clip-on ear wires."
+  },
+  {
+    id: 53,
+    name: "D36",
+    price: 20.00,
+    image: "/vetvisualshop/images/D36.jpeg",
+    description: "Ornate vintage-style filigree teardrops with pave AB and clear rhinestones, on clip-on ear wires."
+  },
+  {
+    id: 54,
+    name: "D37",
+    price: 20.00,
+    image: "/vetvisualshop/images/D37.jpeg",
+    description: "Mismatched pair: a rhinestone flower cluster paired with a textured leaf, on clip-on ear wires."
+  },
+  {
+    id: 55,
+    name: "D38",
+    price: 20.00,
+    image: "/vetvisualshop/images/D38.jpeg",
+    description: "Opal cabochon dragonfly-wing dangles with a freshwater pearl drop, on clip-on ear wires."
+  },
+  {
+    id: 56,
+    name: "D39",
+    price: 20.00,
+    image: "/vetvisualshop/images/D39.jpeg",
+    description: "Chartreuse glass nugget beads with dangling metal fringe and pearl accents, on clip-on ear wires."
+  },
+  {
+    id: 57,
+    name: "D40",
+    price: 20.00,
+    image: "/vetvisualshop/images/D40.jpeg",
+    description: "Olive green rectangular stone beads with a faceted crystal and silver bead accent, on clip-on ear wires."
+  },
+  {
+    id: 58,
+    name: "D41",
+    price: 20.00,
+    image: "/vetvisualshop/images/D41.jpeg",
+    description: "Mismatched pair: a blue teardrop and a champagne teardrop, each with a clear crystal cluster accent, on clip-on ear wires."
+  },
+  {
+    id: 59,
+    name: "D42",
+    price: 20.00,
+    image: "/vetvisualshop/images/D42.jpeg",
+    description: "Clear crystal clusters with a turquoise faceted bead accent, on clip-on ear wires."
+  },
+  {
+    id: 60,
+    name: "D43",
+    price: 20.00,
+    image: "/vetvisualshop/images/D43.jpeg",
+    description: "Aqua frosted sea glass nuggets with a freshwater pearl and silver leaf cap, on clip-on ear wires."
+  },
+  {
+    id: 61,
+    name: "D44",
+    price: 20.00,
+    image: "/vetvisualshop/images/D44.jpeg",
+    description: "Cobalt blue rondelle beads set between ornate filigree silver caps, on clip-on ear wires."
+  },
+  {
+    id: 62,
+    name: "D45",
+    price: 20.00,
+    image: "/vetvisualshop/images/D45.jpeg",
+    description: "Mismatched pair: a blue fluted bead and a purple iridescent fluted bead, each in a gold filigree cap, on clip-on ear wires."
   }
 ];
