@@ -10,7 +10,7 @@ const STREAM_ITEMS = [
   {
     id: 39,
     name: "S1",
-    price: 30.00,
+    price: 20.00,
     image: "images/stream/S1.jpeg",
     description: "Cobalt blue sea glass nugget with an iridescent AB crystal accent, on silver leverback ear wires. Made live on stream."
   },
@@ -38,21 +38,21 @@ const STREAM_ITEMS = [
   {
     id: 43,
     name: "S5",
-    price: 30.00,
+    price: 20.00,
     image: "images/stream/S5.jpeg",
     description: "Pale lavender sea glass nugget with an iridescent AB crystal accent, on silver leverback ear wires. Made live on stream."
   },
   {
     id: 44,
     name: "S6",
-    price: 30.00,
+    price: 20.00,
     image: "images/stream/S6.jpeg",
     description: "Turquoise sea glass nugget with an iridescent AB crystal accent, on silver leverback ear wires. Made live on stream."
   },
   {
     id: 45,
     name: "S7",
-    price: 30.00,
+    price: 20.00,
     image: "images/stream/S7.jpeg",
     description: "Periwinkle sea glass nugget with an iridescent AB crystal accent, on silver leverback ear wires. Made live on stream."
   },
