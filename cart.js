@@ -1,4 +1,4 @@
-const CART_KEY = "vetVisualCart";
+const CART_KEY = "shopCart";
 
 const SHIPPING_TIERS = [
   { max: 49.99, rate: 8.00 },

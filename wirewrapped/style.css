@@ -16,6 +16,13 @@ body {
   z-index: -1;
 }
 
+/* Sticky wrapper: keeps header + stream bar pinned together while content scrolls */
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 /* Header */
 header {
   background: #000;
@@ -23,9 +30,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }
 
 header h1 {
@@ -54,6 +58,114 @@ header h1 a {
 
 .cart-link:hover {
   background: rgba(245, 216, 137, 0.1);
+}
+
+/* Made on Stream: fixed featured spot below the header */
+.stream-bar {
+  background: rgba(0, 0, 0, 0.75);
+  border-bottom: 1px solid rgba(245, 216, 137, 0.3);
+  padding: 0.6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stream-badge {
+  color: #F5D889;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 1rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.stream-scroll {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.stream-card {
+  flex: 0 0 auto;
+  width: 84px;
+  text-align: center;
+}
+
+.stream-card-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.stream-card-img-wrap {
+  position: relative;
+  width: 60px;
+  margin: 0 auto;
+}
+
+.stream-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.stream-card.sold img {
+  opacity: 0.45;
+}
+
+.sold-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  background: rgba(216, 90, 48, 0.9);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.stream-card h4 {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stream-card .price {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.stream-card-add {
+  margin-top: 0.25rem;
+  border: 1px solid #F5D889;
+  background: none;
+  color: #F5D889;
+  border-radius: 12px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.stream-card-add:hover {
+  background: rgba(245, 216, 137, 0.15);
+}
+
+.stream-card-add:disabled {
+  border-color: #888;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.stream-card-add:disabled:hover {
+  background: none;
 }
 
 /* Scrollable Shop Index */
@@ -196,10 +308,21 @@ header h1 a {
   font-size: 1rem;
 }
 
+.btn:disabled {
+  background: #555;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
 .add-confirm {
   color: #6fdc8c;
   min-height: 1.2em;
   margin-top: 0.75rem;
+}
+
+.sold-notice {
+  color: #f0997b;
+  font-weight: bold;
 }
 
 /* Cart */
@@ -272,6 +395,42 @@ header h1 a {
   display: inline-block;
   margin-left: 0.75rem;
   background: #3D95CE;
+}
+
+/* Shop Hub */
+.shop-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.shop-hub-card {
+  display: block;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease;
+}
+
+.shop-hub-card:hover {
+  transform: translateY(-4px);
+}
+
+.shop-hub-card h2 {
+  font-family: 'Berkshire Swash', cursive;
+  font-weight: normal;
+  color: #F5D889;
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+}
+
+.shop-hub-card p {
+  margin: 0;
+  color: #ddd;
 }
 
 /* Footer */

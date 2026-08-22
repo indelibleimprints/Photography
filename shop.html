@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Indelible Imprints</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vetvisualshop/style.css">
+</head>
+<body>
+  <!-- Static Background (fixed, does not scroll) -->
+  <div class="shop-background"></div>
+
+  <div class="sticky-top">
+    <!-- Header -->
+    <header>
+      <h1><a href="index.html">Indelible Imprints Shop</a></h1>
+      <a class="cart-link" href="cart.html">Cart <span id="cart-count">0</span></a>
+    </header>
+  </div>
+
+  <!-- Shop Hub -->
+  <main class="shop-index">
+    <p class="shop-intro">Pick a shop to browse.</p>
+
+    <div class="shop-hub-grid">
+      <a class="shop-hub-card" href="vetvisualshop/index.html">
+        <h2>Vet Visual Shop</h2>
+        <p>Handmade earrings, made on stream</p>
+      </a>
+
+      <a class="shop-hub-card" href="wirewrapped/index.html">
+        <h2>Wire Wrapped Jewelry</h2>
+        <p>Original wire-wrapped pieces</p>
+      </a>
+
+      <a class="shop-hub-card" href="resale/index.html">
+        <h2>Resale Finds</h2>
+        <p>Handpicked jewelry from craft shows</p>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <a href="index.html"><img src="images/logo.jpeg" alt="Indelible Imprints Logo" class="footer-logo"></a>
+    <p>&copy; 2025 Indelible Imprints. All Rights Reserved.</p>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script>
+    updateCartBadge();
+  </script>
+</body>
+</html>

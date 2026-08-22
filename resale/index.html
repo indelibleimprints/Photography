@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wire Wrapped Jewelry | Indelible Imprints</title>
+  <title>Resale Finds | Indelible Imprints</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
@@ -16,20 +16,14 @@
   <div class="sticky-top">
     <!-- Header -->
     <header>
-      <h1>Wire Wrapped Jewelry</h1>
+      <h1>Resale Finds</h1>
       <a class="cart-link" href="../cart.html">Cart <span id="cart-count">0</span></a>
     </header>
-
-    <!-- Made on Stream: fixed featured spot, not part of the scrollable grid -->
-    <div class="stream-bar">
-      <span class="stream-badge">Made on Stream</span>
-      <div class="stream-scroll" id="stream-scroll"></div>
-    </div>
   </div>
 
   <!-- Scrollable Shop Index -->
   <main class="shop-index">
-    <p class="shop-intro">Tap an item to inquire.</p>
+    <p class="shop-intro">Handpicked jewelry from craft shows and other makers. Tap an item to inquire.</p>
 
     <div class="shop-grid" id="shop-grid"></div>
   </main>
@@ -41,11 +35,10 @@
   </footer>
 
   <script src="products.js"></script>
-  <script src="../streamItem.js"></script>
   <script src="../cart.js"></script>
   <script>
     const grid = document.getElementById("shop-grid");
-    WIREWRAPPED_PRODUCTS.forEach(product => {
+    RESALE_PRODUCTS.forEach(product => {
       const item = document.createElement("a");
       item.className = "shop-item";
       item.href = `product.html?id=${product.id}`;
@@ -58,31 +51,6 @@
       `;
       grid.appendChild(item);
     });
-
-    const streamScroll = document.getElementById("stream-scroll");
-    STREAM_ITEMS.forEach(item => {
-      const card = document.createElement("div");
-      card.className = item.sold ? "stream-card sold" : "stream-card";
-      card.innerHTML = `
-        <a href="product.html?id=${item.id}" class="stream-card-link">
-          <div class="stream-card-img-wrap">
-            <img src="${item.image}" alt="${item.name}">
-            ${item.sold ? '<span class="sold-badge">Sold</span>' : ''}
-          </div>
-          <h4>${item.name}</h4>
-          <p class="price">$${item.price.toFixed(2)}</p>
-        </a>
-        ${item.sold ? '<button class="stream-card-add" disabled>Sold</button>' : '<button class="stream-card-add">Add</button>'}
-      `;
-      if (!item.sold) {
-        card.querySelector(".stream-card-add").addEventListener("click", () => {
-          addToCart(item.id, 1);
-          updateCartBadge();
-        });
-      }
-      streamScroll.appendChild(card);
-    });
-
     updateCartBadge();
   </script>
 </body>
