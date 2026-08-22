@@ -39,7 +39,7 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const id = parseInt(params.get("id"), 10);
-    const product = [...PRODUCTS, STREAM_ITEM].find(p => p.id === id);
+    const product = [...PRODUCTS, ...STREAM_ITEMS].find(p => p.id === id);
     const container = document.getElementById("product-detail");
 
     if (!product) {

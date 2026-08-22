@@ -21,7 +21,10 @@
     </header>
 
     <!-- Made on Stream: fixed featured spot, not part of the scrollable grid -->
-    <div class="stream-bar" id="stream-bar"></div>
+    <div class="stream-bar">
+      <span class="stream-badge">Made on Stream</span>
+      <div class="stream-scroll" id="stream-scroll"></div>
+    </div>
   </div>
 
   <!-- Scrollable Shop Index -->
@@ -56,21 +59,23 @@
       grid.appendChild(item);
     });
 
-    const streamBar = document.getElementById("stream-bar");
-    streamBar.innerHTML = `
-      <span class="stream-badge">Made on Stream</span>
-      <img src="${STREAM_ITEM.image}" alt="${STREAM_ITEM.name}">
-      <div class="stream-info">
-        <h3>${STREAM_ITEM.name}</h3>
-        <p class="price">$${STREAM_ITEM.price.toFixed(2)}</p>
-      </div>
-      <button id="stream-add-btn" class="btn">Add to Cart</button>
-      <span id="stream-add-confirm" class="stream-add-confirm"></span>
-    `;
-    document.getElementById("stream-add-btn").addEventListener("click", () => {
-      addToCart(STREAM_ITEM.id, 1);
-      updateCartBadge();
-      document.getElementById("stream-add-confirm").textContent = "Added!";
+    const streamScroll = document.getElementById("stream-scroll");
+    STREAM_ITEMS.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "stream-card";
+      card.innerHTML = `
+        <a href="product.html?id=${item.id}" class="stream-card-link">
+          <img src="${item.image}" alt="${item.name}">
+          <h4>${item.name}</h4>
+          <p class="price">$${item.price.toFixed(2)}</p>
+        </a>
+        <button class="stream-card-add">Add</button>
+      `;
+      card.querySelector(".stream-card-add").addEventListener("click", () => {
+        addToCart(item.id, 1);
+        updateCartBadge();
+      });
+      streamScroll.appendChild(card);
     });
 
     updateCartBadge();
