@@ -31,7 +31,7 @@ const STREAM_ITEMS = [
   {
     id: 42,
     name: "S4",
-    price: 30.00,
+    price: 20.00,
     image: "images/stream/S4.jpeg",
     description: "Turquoise cabochon studs set on a frosted square backing, with silver leverback ear wires. Made live on stream."
   },
