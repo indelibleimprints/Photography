@@ -298,7 +298,7 @@ const VET_PRODUCTS = [
     name: "D37",
     price: 20.00,
     image: "/vetvisualshop/images/D37.jpeg",
-    description: "Mismatched pair: a rhinestone flower cluster paired with a textured leaf, on clip-on ear wires."
+    description: "Rhinestone flower cluster earrings, shown front and back, on clip-on ear wires."
   },
   {
     id: 55,
