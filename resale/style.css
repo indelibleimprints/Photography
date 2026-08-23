@@ -405,6 +405,12 @@ header h1 a {
   background: #3D95CE;
 }
 
+.paypal-btn {
+  display: inline-block;
+  margin-left: 0.75rem;
+  background: #003087;
+}
+
 /* Shop Hub */
 .shop-hub-grid {
   display: grid;
