@@ -24,13 +24,14 @@ function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
-function addToCart(id, qty) {
+function addToCart(id, qty, maxQty) {
+  const cap = maxQty || 1;
   const cart = getCart();
   const existing = cart.find(item => item.id === id);
   if (existing) {
-    existing.qty += qty;
+    existing.qty = Math.min(existing.qty + qty, cap);
   } else {
-    cart.push({ id, qty });
+    cart.push({ id, qty: Math.min(qty, cap) });
   }
   saveCart(cart);
 }

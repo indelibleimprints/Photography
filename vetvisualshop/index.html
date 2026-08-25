@@ -80,7 +80,7 @@
       `;
       if (!item.sold) {
         card.querySelector(".stream-card-add").addEventListener("click", () => {
-          addToCart(item.id, 1);
+          addToCart(item.id, 1, item.quantity || 1);
           updateCartBadge();
         });
       }

@@ -361,6 +361,11 @@ header h1 a {
   border: 1px solid #555;
 }
 
+.cart-qty:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .line-total {
   font-weight: bold;
   margin: 0;
