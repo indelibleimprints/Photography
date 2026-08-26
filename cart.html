@@ -85,7 +85,7 @@
         <p class="cart-line">Subtotal: $${total.toFixed(2)}</p>
         <p class="cart-line">Shipping: ${shippingLabel}</p>
         <p class="cart-total">Total: $${grandTotal.toFixed(2)}</p>
-        <a class="btn checkout-btn" id="checkout-btn">Checkout via Email</a>
+        <a class="btn cashapp-btn" id="cashapp-btn" target="_blank" rel="noopener">Pay with Cash App</a>
         <a class="btn venmo-btn" id="venmo-btn" target="_blank" rel="noopener">Pay with Venmo</a>
         <a class="btn paypal-btn" id="paypal-btn" target="_blank" rel="noopener">Pay with PayPal</a>
       `;
@@ -106,12 +106,8 @@
         });
       });
 
-      const checkoutBtn = document.getElementById("checkout-btn");
-      const lines = cart.map(entry => {
-        const product = ALL_ITEMS.find(p => p.id === entry.id);
-        return product ? `${entry.qty} x ${product.name} - $${(product.price * entry.qty).toFixed(2)}` : "";
-      }).join("%0D%0A");
-      checkoutBtn.href = `mailto:vetvisualstoryteller@gmail.com?subject=Shop%20Order&body=${lines}%0D%0A%0D%0ASubtotal:%20$${total.toFixed(2)}%0D%0AShipping:%20${shipping === 0 ? "Free" : "$" + shipping.toFixed(2)}%0D%0ATotal:%20$${grandTotal.toFixed(2)}`;
+      const cashappBtn = document.getElementById("cashapp-btn");
+      cashappBtn.href = `https://cash.app/$ChadSneary/${grandTotal.toFixed(2)}`;
 
       const venmoBtn = document.getElementById("venmo-btn");
       const venmoNote = encodeURIComponent("Shop order");

@@ -400,8 +400,9 @@ header h1 a {
   margin: 0.5rem 0 1rem;
 }
 
-.checkout-btn {
+.cashapp-btn {
   display: inline-block;
+  background: #00C244;
 }
 
 .venmo-btn {
