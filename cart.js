@@ -57,3 +57,31 @@ function updateCartBadge() {
   const badge = document.getElementById("cart-count");
   if (badge) badge.textContent = cartCount();
 }
+
+// Reservation system: one-off pieces get reserved the moment someone clicks
+// a payment button, so nobody else can buy the same item while that payment
+// is in flight. No expiry - a reservation only clears when it's deleted in
+// the Cloudflare KV dashboard (payment confirmed -> mark sold in products.js
+// and delete the key; payment never came -> just delete the key).
+async function fetchReservedIds() {
+  try {
+    const res = await fetch("/api/reserved");
+    if (!res.ok) return [];
+    const ids = await res.json();
+    return ids.map(id => parseInt(id, 10));
+  } catch (e) {
+    return [];
+  }
+}
+
+async function reserveItems(ids) {
+  try {
+    await fetch("/api/reserve", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ids })
+    });
+  } catch (e) {
+    // Don't block checkout if the reservation API is unreachable.
+  }
+}

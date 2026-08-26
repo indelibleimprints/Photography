@@ -36,49 +36,58 @@
   <script src="products.js"></script>
   <script src="../cart.js"></script>
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const id = parseInt(params.get("id"), 10);
-    const product = RESALE_PRODUCTS.find(p => p.id === id);
-    const container = document.getElementById("product-detail");
+    (async () => {
+      const reservedIds = await fetchReservedIds();
 
-    if (!product) {
-      container.innerHTML = `<p>Item not found.</p>`;
-    } else {
-      const maxQty = product.quantity || 1;
-      container.innerHTML = `
-        <img src="${product.image}" alt="${product.name}" class="product-image">
-        <div class="product-info">
-          <h2>${product.name}</h2>
-          <p class="price">$${product.price.toFixed(2)}</p>
-          <p class="product-description">${product.description}</p>
-          ${product.sold ? `
-            <p class="sold-notice">This piece has sold.</p>
-            <button class="btn" disabled>Sold</button>
-          ` : `
-            ${maxQty > 1 ? `
-              <div class="qty-row">
-                <label for="qty">Quantity</label>
-                <input type="number" id="qty" value="1" min="1" max="${maxQty}">
-              </div>
-            ` : ''}
-            <button id="add-to-cart-btn" class="btn">Add to Cart</button>
-            <p id="add-confirm" class="add-confirm"></p>
-          `}
-        </div>
-      `;
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get("id"), 10);
+      const product = RESALE_PRODUCTS.find(p => p.id === id);
+      const container = document.getElementById("product-detail");
 
-      if (!product.sold) {
-        document.getElementById("add-to-cart-btn").addEventListener("click", () => {
-          const qtyInput = document.getElementById("qty");
-          const qty = qtyInput ? Math.max(1, parseInt(qtyInput.value, 10) || 1) : 1;
-          addToCart(product.id, qty, maxQty);
-          updateCartBadge();
-          document.getElementById("add-confirm").textContent = "Added to cart.";
-        });
+      if (!product) {
+        container.innerHTML = `<p>Item not found.</p>`;
+      } else {
+        const maxQty = product.quantity || 1;
+        const reserved = !product.sold && reservedIds.includes(product.id);
+        const unavailable = product.sold || reserved;
+        container.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" class="product-image">
+          <div class="product-info">
+            <h2>${product.name}</h2>
+            <p class="price">$${product.price.toFixed(2)}</p>
+            <p class="product-description">${product.description}</p>
+            ${product.sold ? `
+              <p class="sold-notice">This piece has sold.</p>
+              <button class="btn" disabled>Sold</button>
+            ` : reserved ? `
+              <p class="reserved-notice">This piece is reserved for a pending order.</p>
+              <button class="btn" disabled>Reserved</button>
+            ` : `
+              ${maxQty > 1 ? `
+                <div class="qty-row">
+                  <label for="qty">Quantity</label>
+                  <input type="number" id="qty" value="1" min="1" max="${maxQty}">
+                </div>
+              ` : ''}
+              <button id="add-to-cart-btn" class="btn">Add to Cart</button>
+              <p id="add-confirm" class="add-confirm"></p>
+            `}
+          </div>
+        `;
+
+        if (!unavailable) {
+          document.getElementById("add-to-cart-btn").addEventListener("click", () => {
+            const qtyInput = document.getElementById("qty");
+            const qty = qtyInput ? Math.max(1, parseInt(qtyInput.value, 10) || 1) : 1;
+            addToCart(product.id, qty, maxQty);
+            updateCartBadge();
+            document.getElementById("add-confirm").textContent = "Added to cart.";
+          });
+        }
       }
-    }
 
-    updateCartBadge();
+      updateCartBadge();
+    })();
   </script>
 </body>
 </html>

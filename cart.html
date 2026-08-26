@@ -116,6 +116,17 @@
       const paypalBtn = document.getElementById("paypal-btn");
       paypalBtn.href = `https://paypal.me/ChadSneary/${grandTotal.toFixed(2)}USD`;
 
+      // Reserve every item in the cart the moment a payment button is
+      // clicked, so nobody else can buy the same one-off piece while this
+      // payment is in flight. Fire-and-forget - doesn't block opening the
+      // payment link.
+      const idsInCart = cart.map(entry => entry.id);
+      [cashappBtn, venmoBtn, paypalBtn].forEach(btn => {
+        btn.addEventListener("click", () => {
+          reserveItems(idsInCart);
+        });
+      });
+
       updateCartBadge();
     }
 

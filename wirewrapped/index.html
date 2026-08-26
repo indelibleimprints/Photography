@@ -45,49 +45,59 @@
   <script src="../streamItem.js"></script>
   <script src="../cart.js"></script>
   <script>
-    const grid = document.getElementById("shop-grid");
-    WIREWRAPPED_PRODUCTS.forEach(product => {
-      const item = document.createElement("a");
-      item.className = product.sold ? "shop-item sold" : "shop-item";
-      item.href = `product.html?id=${product.id}`;
-      item.innerHTML = `
-        <div class="shop-item-img-wrap">
-          <img src="${product.image}" alt="${product.name}">
-          ${product.sold ? '<span class="sold-badge">Sold</span>' : ''}
-        </div>
-        <div class="shop-item-info">
-          <h3>${product.name}</h3>
-          <p class="price">$${product.price.toFixed(2)}</p>
-        </div>
-      `;
-      grid.appendChild(item);
-    });
+    (async () => {
+      const reservedIds = await fetchReservedIds();
 
-    const streamScroll = document.getElementById("stream-scroll");
-    STREAM_ITEMS.forEach(item => {
-      const card = document.createElement("div");
-      card.className = item.sold ? "stream-card sold" : "stream-card";
-      card.innerHTML = `
-        <a href="product.html?id=${item.id}" class="stream-card-link">
-          <div class="stream-card-img-wrap">
-            <img src="${item.image}" alt="${item.name}">
-            ${item.sold ? '<span class="sold-badge">Sold</span>' : ''}
+      const grid = document.getElementById("shop-grid");
+      WIREWRAPPED_PRODUCTS.forEach(product => {
+        const reserved = !product.sold && reservedIds.includes(product.id);
+        const unavailable = product.sold || reserved;
+        const item = document.createElement("a");
+        item.className = unavailable ? `shop-item ${product.sold ? "sold" : "reserved"}` : "shop-item";
+        item.href = `product.html?id=${product.id}`;
+        item.innerHTML = `
+          <div class="shop-item-img-wrap">
+            <img src="${product.image}" alt="${product.name}">
+            ${product.sold ? '<span class="sold-badge">Sold</span>' : ''}
+            ${reserved ? '<span class="reserved-badge">Reserved</span>' : ''}
           </div>
-          <h4>${item.name}</h4>
-          <p class="price">$${item.price.toFixed(2)}</p>
-        </a>
-        ${item.sold ? '<button class="stream-card-add" disabled>Sold</button>' : '<button class="stream-card-add">Add</button>'}
-      `;
-      if (!item.sold) {
-        card.querySelector(".stream-card-add").addEventListener("click", () => {
-          addToCart(item.id, 1, item.quantity || 1);
-          updateCartBadge();
-        });
-      }
-      streamScroll.appendChild(card);
-    });
+          <div class="shop-item-info">
+            <h3>${product.name}</h3>
+            <p class="price">$${product.price.toFixed(2)}</p>
+          </div>
+        `;
+        grid.appendChild(item);
+      });
 
-    updateCartBadge();
+      const streamScroll = document.getElementById("stream-scroll");
+      STREAM_ITEMS.forEach(item => {
+        const reserved = !item.sold && reservedIds.includes(item.id);
+        const unavailable = item.sold || reserved;
+        const card = document.createElement("div");
+        card.className = unavailable ? `stream-card ${item.sold ? "sold" : "reserved"}` : "stream-card";
+        card.innerHTML = `
+          <a href="product.html?id=${item.id}" class="stream-card-link">
+            <div class="stream-card-img-wrap">
+              <img src="${item.image}" alt="${item.name}">
+              ${item.sold ? '<span class="sold-badge">Sold</span>' : ''}
+              ${reserved ? '<span class="reserved-badge">Reserved</span>' : ''}
+            </div>
+            <h4>${item.name}</h4>
+            <p class="price">$${item.price.toFixed(2)}</p>
+          </a>
+          ${unavailable ? `<button class="stream-card-add" disabled>${item.sold ? "Sold" : "Reserved"}</button>` : '<button class="stream-card-add">Add</button>'}
+        `;
+        if (!unavailable) {
+          card.querySelector(".stream-card-add").addEventListener("click", () => {
+            addToCart(item.id, 1, item.quantity || 1);
+            updateCartBadge();
+          });
+        }
+        streamScroll.appendChild(card);
+      });
+
+      updateCartBadge();
+    })();
   </script>
 </body>
 </html>

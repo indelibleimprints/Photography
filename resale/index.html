@@ -38,24 +38,31 @@
   <script src="products.js"></script>
   <script src="../cart.js"></script>
   <script>
-    const grid = document.getElementById("shop-grid");
-    RESALE_PRODUCTS.forEach(product => {
-      const item = document.createElement("a");
-      item.className = product.sold ? "shop-item sold" : "shop-item";
-      item.href = `product.html?id=${product.id}`;
-      item.innerHTML = `
-        <div class="shop-item-img-wrap">
-          <img src="${product.image}" alt="${product.name}">
-          ${product.sold ? '<span class="sold-badge">Sold</span>' : ''}
-        </div>
-        <div class="shop-item-info">
-          <h3>${product.name}</h3>
-          <p class="price">$${product.price.toFixed(2)}</p>
-        </div>
-      `;
-      grid.appendChild(item);
-    });
-    updateCartBadge();
+    (async () => {
+      const reservedIds = await fetchReservedIds();
+
+      const grid = document.getElementById("shop-grid");
+      RESALE_PRODUCTS.forEach(product => {
+        const reserved = !product.sold && reservedIds.includes(product.id);
+        const unavailable = product.sold || reserved;
+        const item = document.createElement("a");
+        item.className = unavailable ? `shop-item ${product.sold ? "sold" : "reserved"}` : "shop-item";
+        item.href = `product.html?id=${product.id}`;
+        item.innerHTML = `
+          <div class="shop-item-img-wrap">
+            <img src="${product.image}" alt="${product.name}">
+            ${product.sold ? '<span class="sold-badge">Sold</span>' : ''}
+            ${reserved ? '<span class="reserved-badge">Reserved</span>' : ''}
+          </div>
+          <div class="shop-item-info">
+            <h3>${product.name}</h3>
+            <p class="price">$${product.price.toFixed(2)}</p>
+          </div>
+        `;
+        grid.appendChild(item);
+      });
+      updateCartBadge();
+    })();
   </script>
 </body>
 </html>
