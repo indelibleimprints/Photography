@@ -357,7 +357,8 @@ const VET_PRODUCTS = [
     name: "D45",
     price: 20.00,
     image: "/vetvisualshop/images/D45.jpeg",
-    description: "Fluted glass beads with a color-shifting iridescent finish, set in gold filigree caps, on clip-on ear wires."
+    description: "Fluted glass beads with a color-shifting iridescent finish, set in gold filigree caps, on clip-on ear wires.",
+    sold: true
   },
   {
     id: 63,
