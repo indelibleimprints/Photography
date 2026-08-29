@@ -87,5 +87,54 @@ const STREAM_ITEMS = [
     image: "/images/stream/Sold4.jpeg",
     description: "Freeform ivory mother of pearl nuggets with an iridescent AB crystal accent cluster, on silver leverback ear wires. Made live on stream.",
     sold: true
+  },
+  {
+    id: 70,
+    name: "S8",
+    price: 20.00,
+    image: "/images/stream/S8.jpeg",
+    description: "Frosted green sea glass nuggets with an iridescent AB crystal accent, on silver leverback ear wires. Made live on stream."
+  },
+  {
+    id: 71,
+    name: "S9",
+    price: 20.00,
+    image: "/images/stream/S9.jpeg",
+    description: "Glossy green nuggets with an iridescent AB crystal accent, on silver leverback ear wires. Made live on stream."
+  },
+  {
+    id: 72,
+    name: "S10",
+    price: 20.00,
+    image: "/images/stream/S10.jpeg",
+    description: "Cobalt blue beads paired with a mint sea glass nugget in a silver leaf cap, on silver leverback ear wires. Made live on stream."
+  },
+  {
+    id: 73,
+    name: "S11",
+    price: 20.00,
+    image: "/images/stream/S11.jpeg",
+    description: "Graduated red and cream marbled ceramic beads, on silver leverback ear wires. Made live on stream."
+  },
+  {
+    id: 74,
+    name: "S12",
+    price: 20.00,
+    image: "/images/stream/S12.jpeg",
+    description: "Terracotta clay disc drops with a textured silver bead accent, on silver leverback ear wires. Made live on stream."
+  },
+  {
+    id: 75,
+    name: "S13",
+    price: 20.00,
+    image: "/images/stream/S13.jpeg",
+    description: "Terracotta clay teardrops with a striped blue paper bead accent, on silver leverback ear wires. Made live on stream."
+  },
+  {
+    id: 76,
+    name: "S14",
+    price: 20.00,
+    image: "/images/stream/S14.jpeg",
+    description: "Sage green clay teardrops with a speckled stone and textured silver bead accent, on silver leverback ear wires. Made live on stream."
   }
 ];
