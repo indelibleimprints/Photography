@@ -402,6 +402,45 @@ header h1 a {
   cursor: pointer;
 }
 
+/* Shipping address form */
+.shipping-form {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.shipping-form h3 {
+  margin-top: 0;
+}
+
+.shipping-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.shipping-form-grid input:nth-child(1),
+.shipping-form-grid input:nth-child(2),
+.shipping-form-grid input:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.shipping-form input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.shipping-status {
+  margin-top: 0.75rem;
+  color: #c9a15a;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
 .remove-btn:hover {
   background: rgba(216, 90, 48, 0.15);
 }

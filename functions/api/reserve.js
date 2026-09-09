@@ -18,8 +18,12 @@ export async function onRequestPost(context) {
   }
 
   const kv = context.env.RESERVATIONS;
-  const now = new Date().toISOString();
-  await Promise.all(ids.map(id => kv.put(String(id), now)));
+  const record = JSON.stringify({
+    reservedAt: new Date().toISOString(),
+    name: body.name || null,
+    address: body.address || null
+  });
+  await Promise.all(ids.map(id => kv.put(String(id), record)));
 
   return new Response(JSON.stringify({ ok: true, reserved: ids }), {
     headers: { "Content-Type": "application/json" }

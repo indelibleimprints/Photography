@@ -27,6 +27,21 @@
     <h2>Your Cart</h2>
     <p class="shop-intro" style="text-align:left; margin-bottom: 1rem;">Holds items added from any shop.</p>
     <div id="cart-items"></div>
+
+    <div class="shipping-form">
+      <h3>Shipping Address</h3>
+      <div class="shipping-form-grid">
+        <input type="text" id="ship-name" placeholder="Full name" autocomplete="name">
+        <input type="text" id="ship-street" placeholder="Street address" autocomplete="address-line1">
+        <input type="text" id="ship-street2" placeholder="Apt / Suite (optional)" autocomplete="address-line2">
+        <input type="text" id="ship-city" placeholder="City" autocomplete="address-level2">
+        <input type="text" id="ship-state" placeholder="State" maxlength="2" autocomplete="address-level1">
+        <input type="text" id="ship-zip" placeholder="ZIP code" autocomplete="postal-code">
+      </div>
+      <button id="get-rate-btn" class="btn">Check Address &amp; Get Shipping Rate</button>
+      <p id="shipping-status" class="shipping-status"></p>
+    </div>
+
     <div id="cart-summary" class="cart-summary"></div>
   </main>
 
@@ -43,6 +58,56 @@
   <script src="cart.js"></script>
   <script>
     const ALL_ITEMS = [...VET_PRODUCTS, ...WIREWRAPPED_PRODUCTS, ...RESALE_PRODUCTS, ...STREAM_ITEMS];
+
+    let shippingOverride = null;
+    let shippingIsLive = false;
+
+    function getAddressForm() {
+      return {
+        name: document.getElementById("ship-name").value.trim(),
+        street: document.getElementById("ship-street").value.trim(),
+        street2: document.getElementById("ship-street2").value.trim(),
+        city: document.getElementById("ship-city").value.trim(),
+        state: document.getElementById("ship-state").value.trim().toUpperCase(),
+        zip: document.getElementById("ship-zip").value.trim()
+      };
+    }
+
+    document.getElementById("get-rate-btn").addEventListener("click", async () => {
+      const address = getAddressForm();
+      const statusEl = document.getElementById("shipping-status");
+
+      if (!address.street || !address.city || !address.state || !address.zip) {
+        statusEl.textContent = "Fill in street, city, state, and ZIP first.";
+        return;
+      }
+
+      statusEl.textContent = "Checking address...";
+      const validated = await validateShippingAddress(address);
+
+      if (!validated) {
+        statusEl.textContent = "Couldn't verify that address right now - using estimated shipping instead.";
+        shippingOverride = null;
+        shippingIsLive = false;
+        render();
+        return;
+      }
+
+      const itemCount = cartCount();
+      statusEl.textContent = "Address verified. Getting shipping rate...";
+      const rate = await fetchLiveShippingRate(address.zip, itemCount);
+
+      if (rate === null) {
+        statusEl.textContent = "Address verified, but live rate lookup isn't available right now - using estimated shipping.";
+        shippingOverride = null;
+        shippingIsLive = false;
+      } else {
+        statusEl.textContent = "Address verified with real USPS shipping rate applied.";
+        shippingOverride = rate;
+        shippingIsLive = true;
+      }
+      render();
+    });
 
     function render() {
       const cart = getCart();
@@ -77,13 +142,14 @@
         `;
       }).join("");
 
-      const shipping = calculateShipping(total);
+      const shipping = shippingOverride !== null ? shippingOverride : calculateShipping(total);
       const grandTotal = total + shipping;
       const shippingLabel = shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`;
+      const shippingSuffix = shippingIsLive ? " (USPS rate)" : " (estimated)";
 
       summaryEl.innerHTML = `
         <p class="cart-line">Subtotal: $${total.toFixed(2)}</p>
-        <p class="cart-line">Shipping: ${shippingLabel}</p>
+        <p class="cart-line">Shipping: ${shippingLabel}${shippingSuffix}</p>
         <p class="cart-total">Total: $${grandTotal.toFixed(2)}</p>
         <a class="btn cashapp-btn" id="cashapp-btn" target="_blank" rel="noopener">Pay with Cash App</a>
         <a class="btn venmo-btn" id="venmo-btn" target="_blank" rel="noopener">Pay with Venmo</a>
@@ -123,7 +189,8 @@
       const idsInCart = cart.map(entry => entry.id);
       [cashappBtn, venmoBtn, paypalBtn].forEach(btn => {
         btn.addEventListener("click", () => {
-          reserveItems(idsInCart);
+          const address = getAddressForm();
+          reserveItems(idsInCart, address.name || null, address.street ? address : null);
         });
       });
 

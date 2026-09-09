@@ -74,14 +74,52 @@ async function fetchReservedIds() {
   }
 }
 
-async function reserveItems(ids) {
+async function reserveItems(ids, name, address) {
   try {
     await fetch("/api/reserve", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ids })
+      body: JSON.stringify({ ids, name, address })
     });
   } catch (e) {
     // Don't block checkout if the reservation API is unreachable.
+  }
+}
+
+// Shipping: tries a real USPS rate first (needs the address filled in and
+// the USPS API credentials configured in Cloudflare), falls back to the
+// flat tiers above if that's not available yet or the call fails.
+async function estimateWeightOz(itemCount) {
+  return 3 + Math.max(0, itemCount - 1) * 1;
+}
+
+async function fetchLiveShippingRate(zip, itemCount) {
+  try {
+    const weightOz = await estimateWeightOz(itemCount);
+    const res = await fetch("/api/shipping-rate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ zip, weightOz })
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.ok ? data.price : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+async function validateShippingAddress(address) {
+  try {
+    const res = await fetch("/api/validate-address", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(address)
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.ok ? data.address : null;
+  } catch (e) {
+    return null;
   }
 }
