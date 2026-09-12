@@ -478,5 +478,33 @@ const VET_PRODUCTS = [
     price: "TBD",
     image: "/vetvisualshop/images/D86.jpeg",
     description: "Teal lampwork glass beads with a black accent bead, on silver leverback ear wires."
+  },
+  {
+    id: 87,
+    name: "D63",
+    price: 30.00,
+    image: "/vetvisualshop/images/D63.jpeg",
+    description: "Bold red stone coin beads with a fire agate accent, on silver leverback ear wires."
+  },
+  {
+    id: 88,
+    name: "D64",
+    price: 35.00,
+    image: "/vetvisualshop/images/D64.jpeg",
+    description: "Magenta glass heart pendants with clear AB crystal accents, on silver leverback ear wires."
+  },
+  {
+    id: 89,
+    name: "D65",
+    price: 35.00,
+    image: "/vetvisualshop/images/D65.jpeg",
+    description: "Green tagua nut slices with mother-of-pearl round accents, on gold-tone leverback ear wires."
+  },
+  {
+    id: 90,
+    name: "D66",
+    price: 25.00,
+    image: "/vetvisualshop/images/D66.jpeg",
+    description: "Mother-of-pearl shell discs with turquoise-tone rondelle accents, on copper-tone leverback ear wires."
   }
 ];
