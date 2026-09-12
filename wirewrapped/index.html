@@ -63,7 +63,7 @@
           </div>
           <div class="shop-item-info">
             <h3>${product.name}</h3>
-            <p class="price">$${product.price.toFixed(2)}</p>
+            <p class="price">${formatPrice(product.price)}</p>
           </div>
         `;
         grid.appendChild(item);
@@ -83,7 +83,7 @@
               ${reserved ? '<span class="reserved-badge">Reserved</span>' : ''}
             </div>
             <h4>${item.name}</h4>
-            <p class="price">$${item.price.toFixed(2)}</p>
+            <p class="price">${formatPrice(item.price)}</p>
           </a>
           ${unavailable ? `<button class="stream-card-add" disabled>${item.sold ? "Sold" : "Reserved"}</button>` : '<button class="stream-card-add">Add</button>'}
         `;

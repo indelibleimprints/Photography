@@ -133,7 +133,7 @@
             <img src="${product.image}" alt="${product.name}">
             <div class="cart-row-info">
               <h3>${product.name}</h3>
-              <p class="price">$${product.price.toFixed(2)} each</p>
+              <p class="price">${formatPrice(product.price)} each</p>
             </div>
             <input type="number" class="cart-qty" min="1" max="${maxQty}" value="${entry.qty}" data-id="${product.id}" data-max="${maxQty}" ${maxQty <= 1 ? 'disabled' : ''}>
             <p class="line-total">$${lineTotal.toFixed(2)}</p>

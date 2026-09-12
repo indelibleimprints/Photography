@@ -6,6 +6,10 @@ const SHIPPING_TIERS = [
   { max: Infinity, rate: 0 }
 ];
 
+function formatPrice(price) {
+  return typeof price === "number" ? `$${price.toFixed(2)}` : "TBD";
+}
+
 function calculateShipping(subtotal) {
   if (subtotal <= 0) return 0;
   const tier = SHIPPING_TIERS.find(t => subtotal <= t.max);

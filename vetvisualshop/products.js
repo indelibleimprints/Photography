@@ -408,5 +408,75 @@ const VET_PRODUCTS = [
     price: 25.00,
     image: "/vetvisualshop/images/D52.jpeg",
     description: "Royal blue fabric flower tassels in gold filigree caps, on clip-on ear wires."
+  },
+  {
+    id: 77,
+    name: "D53",
+    price: "TBD",
+    image: "/vetvisualshop/images/D77.jpeg",
+    description: "Pale mint tagua nut hoops with a cobalt blue sea glass chip and mint cat's eye bead dangling inside."
+  },
+  {
+    id: 78,
+    name: "D54",
+    price: "TBD",
+    image: "/vetvisualshop/images/D78.jpeg",
+    description: "Cream tagua nut bead with a brown crackle pattern, paired with a pale blue frosted glass accent."
+  },
+  {
+    id: 79,
+    name: "D55",
+    price: "TBD",
+    image: "/vetvisualshop/images/D79.jpeg",
+    description: "Cream cylindrical beads with a color-shifting purple/pink AB crystal accent."
+  },
+  {
+    id: 80,
+    name: "D56",
+    price: "TBD",
+    image: "/vetvisualshop/images/D80.jpeg",
+    description: "Frosted white cylindrical glass beads, a simple minimalist drop."
+  },
+  {
+    id: 81,
+    name: "D57",
+    price: "TBD",
+    image: "/vetvisualshop/images/D81.jpeg",
+    description: "Peach tagua nut hoops with a cornflower blue matte bead and a textured silver accent bead."
+  },
+  {
+    id: 82,
+    name: "D58",
+    price: "TBD",
+    image: "/vetvisualshop/images/D82.jpeg",
+    description: "Peach tagua nut hoops with rectangular mother-of-pearl-style beads and gold-tone hardware."
+  },
+  {
+    id: 83,
+    name: "D59",
+    price: "TBD",
+    image: "/vetvisualshop/images/D83.jpeg",
+    description: "Color-shifting AB crystal accent with a dark plum freshwater pearl, on silver leverback ear wires."
+  },
+  {
+    id: 84,
+    name: "D60",
+    price: "TBD",
+    image: "/vetvisualshop/images/D84.jpeg",
+    description: "Freshwater pearl drops in a dove grey and soft lavender pairing, on silver leverback ear wires."
+  },
+  {
+    id: 85,
+    name: "D61",
+    price: "TBD",
+    image: "/vetvisualshop/images/D85.jpeg",
+    description: "Golden tagua nut hoops with a lava rock bead and gold-tone cat's eye accent."
+  },
+  {
+    id: 86,
+    name: "D62",
+    price: "TBD",
+    image: "/vetvisualshop/images/D86.jpeg",
+    description: "Teal lampwork glass beads with a black accent bead, on silver leverback ear wires."
   }
 ];
