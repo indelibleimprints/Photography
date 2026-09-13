@@ -412,14 +412,14 @@ const VET_PRODUCTS = [
   {
     id: 77,
     name: "D53",
-    price: "TBD",
+    price: 35.00,
     image: "/vetvisualshop/images/D77.jpeg",
     description: "Pale mint tagua nut hoops with a cobalt blue sea glass chip and mint cat's eye bead dangling inside."
   },
   {
     id: 78,
     name: "D54",
-    price: "TBD",
+    price: 35.00,
     image: "/vetvisualshop/images/D78.jpeg",
     description: "Cream tagua nut bead with a brown crackle pattern, paired with a pale blue frosted glass accent."
   },
@@ -440,14 +440,14 @@ const VET_PRODUCTS = [
   {
     id: 81,
     name: "D57",
-    price: "TBD",
+    price: 35.00,
     image: "/vetvisualshop/images/D81.jpeg",
     description: "Peach tagua nut hoops with a cornflower blue matte bead and a textured silver accent bead."
   },
   {
     id: 82,
     name: "D58",
-    price: "TBD",
+    price: 35.00,
     image: "/vetvisualshop/images/D82.jpeg",
     description: "Peach tagua nut hoops with rectangular mother-of-pearl-style beads and gold-tone hardware."
   },
@@ -468,7 +468,7 @@ const VET_PRODUCTS = [
   {
     id: 85,
     name: "D61",
-    price: "TBD",
+    price: 35.00,
     image: "/vetvisualshop/images/D85.jpeg",
     description: "Golden tagua nut hoops with a lava rock bead and gold-tone cat's eye accent."
   },
