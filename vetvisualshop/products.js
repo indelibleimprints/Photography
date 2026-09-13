@@ -454,14 +454,14 @@ const VET_PRODUCTS = [
   {
     id: 83,
     name: "D59",
-    price: "TBD",
+    price: 40.00,
     image: "/vetvisualshop/images/D83.jpeg",
     description: "Color-shifting AB crystal accent with a dark plum freshwater pearl, on silver leverback ear wires."
   },
   {
     id: 84,
     name: "D60",
-    price: "TBD",
+    price: 40.00,
     image: "/vetvisualshop/images/D84.jpeg",
     description: "Freshwater pearl drops in a dove grey and soft lavender pairing, on silver leverback ear wires."
   },
