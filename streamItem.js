@@ -317,7 +317,7 @@ const STREAM_ITEMS = [
   {
     id: 88,
     name: "S38",
-    price: 35.00,
+    price: 25.00,
     image: "/images/stream/S38.jpeg",
     description: "Magenta glass heart pendants with clear AB crystal accents, on silver leverback ear wires. Made live on stream."
   },
