@@ -426,14 +426,14 @@ const VET_PRODUCTS = [
   {
     id: 79,
     name: "D55",
-    price: "TBD",
+    price: 25.00,
     image: "/vetvisualshop/images/D79.jpeg",
     description: "Cream cylindrical beads with a color-shifting purple/pink AB crystal accent."
   },
   {
     id: 80,
     name: "D56",
-    price: "TBD",
+    price: 30.00,
     image: "/vetvisualshop/images/D80.jpeg",
     description: "Frosted white cylindrical glass beads, a simple minimalist drop."
   },
@@ -475,7 +475,7 @@ const VET_PRODUCTS = [
   {
     id: 86,
     name: "D62",
-    price: "TBD",
+    price: 25.00,
     image: "/vetvisualshop/images/D86.jpeg",
     description: "Teal lampwork glass beads with a black accent bead, on silver leverback ear wires."
   },
