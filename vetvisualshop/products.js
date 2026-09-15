@@ -364,5 +364,54 @@ const VET_PRODUCTS = [
     price: 15.00,
     image: "/vetvisualshop/images/D46.jpeg",
     description: "Frosted plum donut-shaped glass beads with silver accent beads, on silver leverback ear wires."
+  },
+  {
+    id: 106,
+    name: "D47",
+    price: 20.00,
+    image: "/vetvisualshop/images/D47.jpeg",
+    description: "Blue hexagon-cut glass beads and clear round beads with a crescent moon charm, on silver leverback ear wires."
+  },
+  {
+    id: 107,
+    name: "D48",
+    price: 20.00,
+    image: "/vetvisualshop/images/D48.jpeg",
+    description: "Ornate silver filigree beads with a pink crystal cabochon center, on silver leverback ear wires."
+  },
+  {
+    id: 108,
+    name: "D49",
+    price: 20.00,
+    image: "/vetvisualshop/images/D49.jpeg",
+    description: "Color-shifting iridescent pink and purple round beads with a silver coil accent, on silver leverback ear wires."
+  },
+  {
+    id: 109,
+    name: "D50",
+    price: 20.00,
+    image: "/vetvisualshop/images/D50.jpeg",
+    description: "Cream beads with a carved maroon floral pattern, paired with a turquoise frosted glass accent, on silver leverback ear wires."
+  },
+  {
+    id: 110,
+    name: "D51",
+    price: 20.00,
+    image: "/vetvisualshop/images/D51.jpeg",
+    description: "Black cylinder beads with a textured cream nugget accent, on silver leverback ear wires."
+  },
+  {
+    id: 111,
+    name: "D52",
+    price: 20.00,
+    image: "/vetvisualshop/images/D52.jpeg",
+    description: "Ornate silver filigree beads with a purple crystal cabochon center, on silver leverback ear wires."
+  },
+  {
+    id: 112,
+    name: "D53",
+    price: 20.00,
+    image: "/vetvisualshop/images/D53.jpeg",
+    description: "Square seafoam green frosted glass beads with a turquoise accent, on gold-tone leverback ear wires."
   }
 ];
