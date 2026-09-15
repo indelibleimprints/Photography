@@ -462,5 +462,33 @@ const VET_PRODUCTS = [
     price: 25.00,
     image: "/vetvisualshop/images/D60.jpeg",
     description: "Brown speckled tortoiseshell-pattern beads with a periwinkle stone accent, on silver leverback ear wires."
+  },
+  {
+    id: 120,
+    name: "D61",
+    price: 30.00,
+    image: "/vetvisualshop/images/D61.jpeg",
+    description: "Faceted blue crystal beads with clear crystal accents, on silver leverback ear wires."
+  },
+  {
+    id: 121,
+    name: "D62",
+    price: 30.00,
+    image: "/vetvisualshop/images/D62.jpeg",
+    description: "Turquoise blue slab pendants with a frosted white sea glass accent, on silver leverback ear wires."
+  },
+  {
+    id: 122,
+    name: "D63",
+    price: 30.00,
+    image: "/vetvisualshop/images/D63.jpeg",
+    description: "Turquoise blue slab pendants with a blue and white speckled ceramic bead accent, on silver leverback ear wires."
+  },
+  {
+    id: 123,
+    name: "D64",
+    price: 30.00,
+    image: "/vetvisualshop/images/D64.jpeg",
+    description: "Silver starfish charms with a dark plum pearl accent, on silver leverback ear wires."
   }
 ];
