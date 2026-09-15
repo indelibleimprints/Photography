@@ -309,4 +309,60 @@ const VET_PRODUCTS = [
     image: "/vetvisualshop/images/D38.jpeg",
     description: "Opal cabochon dragonfly-wing dangles with a freshwater pearl drop, on clip-on ear wires."
   },
+  {
+    id: 91,
+    name: "D39",
+    price: 15.00,
+    image: "/vetvisualshop/images/D39.jpeg",
+    description: "Faceted amethyst-purple round beads set between silver fan-shaped caps, on silver leverback ear wires."
+  },
+  {
+    id: 92,
+    name: "D40",
+    price: 15.00,
+    image: "/vetvisualshop/images/D40.jpeg",
+    description: "Frosted pink donut-shaped glass beads with silver accent beads, on silver leverback ear wires."
+  },
+  {
+    id: 93,
+    name: "D41",
+    price: 15.00,
+    image: "/vetvisualshop/images/D41.jpeg",
+    description: "Frosted periwinkle donut-shaped glass beads with silver accent beads, on silver leverback ear wires."
+  },
+  {
+    id: 94,
+    name: "D42",
+    price: 15.00,
+    image: "/vetvisualshop/images/D42.jpeg",
+    description: "Frosted golden yellow donut-shaped glass beads with silver accent beads, on silver leverback ear wires."
+  },
+  {
+    id: 95,
+    name: "D43",
+    price: 15.00,
+    image: "/vetvisualshop/images/D43.jpeg",
+    description: "Frosted turquoise blue donut-shaped glass beads with silver accent beads, on silver leverback ear wires."
+  },
+  {
+    id: 96,
+    name: "D44",
+    price: 15.00,
+    image: "/vetvisualshop/images/D44.jpeg",
+    description: "Frosted olive green donut-shaped glass beads with silver accent beads, on silver leverback ear wires."
+  },
+  {
+    id: 97,
+    name: "D45",
+    price: 15.00,
+    image: "/vetvisualshop/images/D45.jpeg",
+    description: "Frosted dusty rose donut-shaped glass beads with silver accent beads, on silver leverback ear wires."
+  },
+  {
+    id: 98,
+    name: "D46",
+    price: 15.00,
+    image: "/vetvisualshop/images/D46.jpeg",
+    description: "Frosted plum donut-shaped glass beads with silver accent beads, on silver leverback ear wires."
+  }
 ];
