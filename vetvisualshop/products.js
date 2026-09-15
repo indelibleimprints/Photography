@@ -413,5 +413,54 @@ const VET_PRODUCTS = [
     price: 20.00,
     image: "/vetvisualshop/images/D53.jpeg",
     description: "Square seafoam green frosted glass beads with a turquoise accent, on gold-tone leverback ear wires."
+  },
+  {
+    id: 113,
+    name: "D54",
+    price: 25.00,
+    image: "/vetvisualshop/images/D54.jpeg",
+    description: "Turquoise-matrix triangle stone beads with a silver spiral accent, on silver leverback ear wires."
+  },
+  {
+    id: 114,
+    name: "D55",
+    price: 25.00,
+    image: "/vetvisualshop/images/D55.jpeg",
+    description: "Blue frosted cat's-eye glass beads with a silver accent, on silver leverback ear wires."
+  },
+  {
+    id: 115,
+    name: "D56",
+    price: 25.00,
+    image: "/vetvisualshop/images/D56.jpeg",
+    description: "Color-shifting blue AB faceted crystal beads, on silver leverback ear wires."
+  },
+  {
+    id: 116,
+    name: "D57",
+    price: 25.00,
+    image: "/vetvisualshop/images/D57.jpeg",
+    description: "Turquoise enamel-style cabochons with a rust splash pattern, in cream ring frames, on silver leverback ear wires."
+  },
+  {
+    id: 117,
+    name: "D58",
+    price: 25.00,
+    image: "/vetvisualshop/images/D58.jpeg",
+    description: "Cream ring-shaped beads with a color-shifting purple and blue bead nested inside, on gold-tone leverback ear wires."
+  },
+  {
+    id: 118,
+    name: "D59",
+    price: 25.00,
+    image: "/vetvisualshop/images/D59.jpeg",
+    description: "Lava rock beads with an ornate silver swirl medallion and a dark green crystal accent, on silver leverback ear wires."
+  },
+  {
+    id: 119,
+    name: "D60",
+    price: 25.00,
+    image: "/vetvisualshop/images/D60.jpeg",
+    description: "Brown speckled tortoiseshell-pattern beads with a periwinkle stone accent, on silver leverback ear wires."
   }
 ];
