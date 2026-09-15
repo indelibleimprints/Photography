@@ -490,5 +490,26 @@ const VET_PRODUCTS = [
     price: 30.00,
     image: "/vetvisualshop/images/D64.jpeg",
     description: "Silver starfish charms with a dark plum pearl accent, on silver leverback ear wires."
+  },
+  {
+    id: 124,
+    name: "D65",
+    price: 35.00,
+    image: "/vetvisualshop/images/D65.jpeg",
+    description: "Foiled pink glass heart beads with a faceted pink crystal accent, on silver leverback ear wires."
+  },
+  {
+    id: 125,
+    name: "D66",
+    price: 35.00,
+    image: "/vetvisualshop/images/D66.jpeg",
+    description: "Color-shifting AB crystal round beads with a faceted crystal cluster dangle, on silver leverback ear wires."
+  },
+  {
+    id: 126,
+    name: "D67",
+    price: 35.00,
+    image: "/vetvisualshop/images/D67.jpeg",
+    description: "Turquoise butterfly-shaped stone beads with a cobalt blue frosted glass teardrop, on silver leverback ear wires."
   }
 ];
