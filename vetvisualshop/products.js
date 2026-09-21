@@ -4,42 +4,42 @@ const VET_PRODUCTS = [
     name: "D1",
     price: 10.00,
     image: "/vetvisualshop/images/D1.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Stacked matte saucer-shaped beads in charcoal, chocolate, and terracotta with amber accent beads, on antiqued copper leverback ear wires."
   },
   {
     id: 2,
     name: "D2",
     price: 10.00,
     image: "/vetvisualshop/images/D2.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Red barrel beads with a cream floral design, matte red round beads, and wood spacers, on antiqued copper leverback ear wires."
   },
   {
     id: 3,
     name: "D3",
     price: 10.00,
     image: "/vetvisualshop/images/D3.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Pale aqua faceted rondelles with opal-white crystal accents, on gunmetal leverback ear wires."
   },
   {
     id: 4,
     name: "D4",
     price: 10.00,
     image: "/vetvisualshop/images/D4.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Smoky champagne faceted crystal rondelles with a white pearl and clear crystal accents, on silver leverback ear wires."
   },
   {
     id: 5,
     name: "D5",
     price: 10.00,
     image: "/vetvisualshop/images/D5.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Frosted white crackle-style round beads with faceted clear crystal rondelles, on silver leverback ear wires."
   },
   {
     id: 6,
     name: "D6",
     price: 10.00,
     image: "/vetvisualshop/images/D6.jpeg",
-    description: "Placeholder description. Replace with details about this print.",
+    description: "Large mauve pearl-style round beads with a faceted rose-toned accent and silver disc spacer, on silver leverback ear wires.",
     sold: true
   },
   {
@@ -47,182 +47,182 @@ const VET_PRODUCTS = [
     name: "D7",
     price: 10.00,
     image: "/vetvisualshop/images/D7.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Pink cat's-eye glass coin beads with swirled lavender and white glass cubes, on silver leverback ear wires."
   },
   {
     id: 8,
     name: "D8",
     price: 10.00,
     image: "/vetvisualshop/images/D8.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Mottled green and charcoal stone ovals with faceted metallic accent beads, on silver leverback ear wires."
   },
   {
     id: 9,
     name: "D9",
     price: 10.00,
     image: "/vetvisualshop/images/D9.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Antiqued bronze rose-carved round beads with a red-orange mottled bead and wood accents, on bronze fishhook ear wires."
   },
   {
     id: 10,
     name: "D10",
     price: 10.00,
     image: "/vetvisualshop/images/D10.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Frosted white glass discs with an iridescent faceted accent, on silver-tone hook ear wires."
   },
   {
     id: 11,
     name: "D11",
     price: 10.00,
     image: "/vetvisualshop/images/D11.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Pale mint green translucent oval glass beads with matte gold-tone accents, on gold-tone hook ear wires."
   },
   {
     id: 12,
     name: "D12",
     price: 10.00,
     image: "/vetvisualshop/images/D12.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Frosted lime green glass saucer beads with iridescent faceted accents, on silver-tone hook ear wires."
   },
   {
     id: 13,
     name: "D13",
     price: 10.00,
     image: "/vetvisualshop/images/D13.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Frosted blush pink glass saucer beads with a lavender accent bead, on gold-tone hook ear wires."
   },
   {
     id: 14,
     name: "D14",
     price: 10.00,
     image: "/vetvisualshop/images/D14.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Frosted white glass saucer beads with metallic blue-green faceted accents, on silver hook ear wires."
   },
   {
     id: 15,
     name: "D15",
     price: 10.00,
     image: "/vetvisualshop/images/D15.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Frosted bright green glass saucer beads with metallic teal faceted accents, on silver hook ear wires."
   },
   {
     id: 16,
     name: "D16",
     price: 10.00,
     image: "/vetvisualshop/images/D16.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Frosted clear glass saucer beads with turquoise accent beads, on silver hook ear wires."
   },
   {
     id: 17,
     name: "D17",
     price: 10.00,
     image: "/vetvisualshop/images/D17.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Frosted aqua blue glass saucer beads with metallic accents, on silver hook ear wires."
   },
   {
     id: 18,
     name: "D18",
     price: 10.00,
     image: "/vetvisualshop/images/D18.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Faceted pale blue crystal beads set on brushed silver discs, on silver leverback ear wires."
   },
   {
     id: 19,
     name: "D19",
     price: 10.00,
     image: "/vetvisualshop/images/D19.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Frosted turquoise glass saucer beads with metallic teal faceted accents, on silver hook ear wires."
   },
   {
     id: 20,
     name: "D20",
     price: 10.00,
     image: "/vetvisualshop/images/D20.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Faceted magenta-pink crystal beads set on brushed silver discs, on silver leverback ear wires."
   },
   {
     id: 21,
     name: "D21",
     price: 10.00,
     image: "/vetvisualshop/images/D21.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Orange and red wood-grain-pattern tube beads with wood accents, on antiqued bronze hook ear wires."
   },
   {
     id: 22,
     name: "D22",
     price: 10.00,
     image: "/vetvisualshop/images/D22.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Hammered antiqued brass coin beads with wood and turquoise-tone seed bead accents, on bronze hook ear wires."
   },
   {
     id: 23,
     name: "D23",
     price: 10.00,
     image: "/vetvisualshop/images/D23.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Antiqued brass rose-carved round beads with wood accents, on copper-tone leverback ear wires."
   },
   {
     id: 24,
     name: "D24",
     price: 10.00,
     image: "/vetvisualshop/images/D24.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Round beads with a green leaf and floral print on amber, with wood accents, on bronze hook ear wires."
   },
   {
     id: 25,
     name: "D25",
     price: 10.00,
     image: "/vetvisualshop/images/D25.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Amber faceted oval glass beads capped with ornate silver bead caps, on silver leverback ear wires."
   },
   {
     id: 26,
     name: "D26",
     price: 10.00,
     image: "/vetvisualshop/images/D26.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Frosted pale blue-grey glass rounds resting on brushed silver discs with a pewter cube accent, on silver ear wires."
   },
   {
     id: 27,
     name: "D27",
     price: 10.00,
     image: "/vetvisualshop/images/D27.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Faceted lavender-purple crystal beads set on brushed silver discs, on silver leverback ear wires."
   },
   {
     id: 28,
     name: "D28",
     price: 10.00,
     image: "/vetvisualshop/images/D28.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Carved round brown beads with cream inlay lines, on antique gold-tone hook ear wires."
   },
   {
     id: 29,
     name: "D29",
     price: 10.00,
     image: "/vetvisualshop/images/D29.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Red and cream floral-pattern barrel beads with wood accents, on bronze hook ear wires."
   },
   {
     id: 30,
     name: "D30",
     price: 10.00,
     image: "/vetvisualshop/images/D30.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Hammered antiqued brass coin beads with turquoise-tone seed bead accents, on bronze hook ear wires."
   },
   {
     id: 31,
     name: "D31",
     price: 10.00,
     image: "/vetvisualshop/images/D31.jpeg",
-    description: "Placeholder description. Replace with details about this print."
+    description: "Clear glass lentil beads with white swirled ribbon detail and a faceted clear crystal accent, on silver leverback ear wires."
   },
   {
     id: 32,
     name: "D32",
     price: 10.00,
     image: "/vetvisualshop/images/D32.jpeg",
-    description: "Placeholder description. Replace with details about this print.",
+    description: "Cobalt blue glass lentil beads with light blue swirled ribbon detail, on silver leverback ear wires.",
     sold: true
   },
   {
