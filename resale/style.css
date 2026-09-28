@@ -198,6 +198,33 @@ header h1 a {
   margin-bottom: 2rem;
 }
 
+.sort-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin: -1rem 0 1.5rem;
+}
+
+.sort-controls label {
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+.sort-controls select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.sort-controls select option {
+  background: #1a1a1a;
+  color: #fff;
+}
+
 .shop-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

@@ -10,6 +10,36 @@ function formatPrice(price) {
   return typeof price === "number" ? `$${price.toFixed(2)}` : "TBD";
 }
 
+// Sorts a shop's product list for display. "number" sorts by catalog id
+// (the order items were added); "price" sorts low-to-high or high-to-low,
+// with TBD-priced items always pushed to the end regardless of direction.
+function sortProducts(products, sortBy) {
+  const sorted = products.slice();
+  const isPriced = p => typeof p.price === "number";
+  const priceCompare = (a, b, dir) => {
+    if (isPriced(a) && isPriced(b)) return (a.price - b.price) * dir;
+    if (isPriced(a)) return -1;
+    if (isPriced(b)) return 1;
+    return 0;
+  };
+
+  switch (sortBy) {
+    case "price-asc":
+      sorted.sort((a, b) => priceCompare(a, b, 1));
+      break;
+    case "price-desc":
+      sorted.sort((a, b) => priceCompare(a, b, -1));
+      break;
+    case "number-desc":
+      sorted.sort((a, b) => b.id - a.id);
+      break;
+    case "number-asc":
+    default:
+      sorted.sort((a, b) => a.id - b.id);
+  }
+  return sorted;
+}
+
 function calculateShipping(subtotal) {
   if (subtotal <= 0) return 0;
   const tier = SHIPPING_TIERS.find(t => subtotal <= t.max);

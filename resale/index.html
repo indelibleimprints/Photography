@@ -26,6 +26,16 @@
     <a class="back-link" href="../shop.html">&larr; Shop Directory</a>
     <p class="shop-intro">Handpicked jewelry from craft shows and other makers. Tap an item to inquire.</p>
 
+    <div class="sort-controls">
+      <label for="sort-select">Sort by</label>
+      <select id="sort-select">
+        <option value="number-asc">Number (Low to High)</option>
+        <option value="number-desc">Number (High to Low)</option>
+        <option value="price-asc">Price (Low to High)</option>
+        <option value="price-desc">Price (High to Low)</option>
+      </select>
+    </div>
+
     <div class="shop-grid" id="shop-grid"></div>
   </main>
 
@@ -42,25 +52,34 @@
       const reservedIds = await fetchReservedIds();
 
       const grid = document.getElementById("shop-grid");
-      RESALE_PRODUCTS.forEach(product => {
-        const reserved = !product.sold && reservedIds.includes(product.id);
-        const unavailable = product.sold || reserved;
-        const item = document.createElement("a");
-        item.className = unavailable ? `shop-item ${product.sold ? "sold" : "reserved"}` : "shop-item";
-        item.href = `product.html?id=${product.id}`;
-        item.innerHTML = `
-          <div class="shop-item-img-wrap">
-            <img src="${product.image}" alt="${product.name}">
-            ${product.sold ? '<span class="sold-badge">Sold</span>' : ''}
-            ${reserved ? '<span class="reserved-badge">Reserved</span>' : ''}
-          </div>
-          <div class="shop-item-info">
-            <h3>${product.name}</h3>
-            <p class="price">${formatPrice(product.price)}</p>
-          </div>
-        `;
-        grid.appendChild(item);
-      });
+
+      function renderGrid(sortBy) {
+        grid.innerHTML = "";
+        sortProducts(RESALE_PRODUCTS, sortBy).forEach(product => {
+          const reserved = !product.sold && reservedIds.includes(product.id);
+          const unavailable = product.sold || reserved;
+          const item = document.createElement("a");
+          item.className = unavailable ? `shop-item ${product.sold ? "sold" : "reserved"}` : "shop-item";
+          item.href = `product.html?id=${product.id}`;
+          item.innerHTML = `
+            <div class="shop-item-img-wrap">
+              <img src="${product.image}" alt="${product.name}">
+              ${product.sold ? '<span class="sold-badge">Sold</span>' : ''}
+              ${reserved ? '<span class="reserved-badge">Reserved</span>' : ''}
+            </div>
+            <div class="shop-item-info">
+              <h3>${product.name}</h3>
+              <p class="price">${formatPrice(product.price)}</p>
+            </div>
+          `;
+          grid.appendChild(item);
+        });
+      }
+
+      const sortSelect = document.getElementById("sort-select");
+      sortSelect.addEventListener("change", () => renderGrid(sortSelect.value));
+      renderGrid(sortSelect.value);
+
       updateCartBadge();
     })();
   </script>
