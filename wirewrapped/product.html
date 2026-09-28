@@ -47,7 +47,7 @@
       const reservedIds = await fetchReservedIds();
 
       const streamScroll = document.getElementById("stream-scroll");
-      STREAM_ITEMS.forEach(streamItem => {
+      sortStreamItems(STREAM_ITEMS).forEach(streamItem => {
         const reserved = !streamItem.sold && reservedIds.includes(streamItem.id);
         const unavailable = streamItem.sold || reserved;
         const card = document.createElement("div");

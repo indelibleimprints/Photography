@@ -40,6 +40,23 @@ function sortProducts(products, sortBy) {
   return sorted;
 }
 
+// Sorts the Made on Stream bar into ascending S-number order (S1, S2, S3...).
+// The flagship piece (no number in its name) stays first; sold pieces that
+// lost their S-number when renamed to a descriptive name sort to the end.
+function sortStreamItems(items) {
+  const numberOf = item => {
+    const match = item.name.match(/\d+/);
+    return match ? parseInt(match[0], 10) : null;
+  };
+  return items.slice().sort((a, b) => {
+    const na = numberOf(a);
+    const nb = numberOf(b);
+    const keyA = na !== null ? na : (a.id === 0 ? -1 : 1000 + a.id);
+    const keyB = nb !== null ? nb : (b.id === 0 ? -1 : 1000 + b.id);
+    return keyA - keyB;
+  });
+}
+
 function calculateShipping(subtotal) {
   if (subtotal <= 0) return 0;
   const tier = SHIPPING_TIERS.find(t => subtotal <= t.max);
