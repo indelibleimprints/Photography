@@ -1,0 +1,14 @@
+{
+  "name": "photography",
+  "main": "worker.js",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "kv_namespaces": [
+    { "binding": "RESERVATIONS", "id": "8f1d4e73276a48ed91ccb0a6daa769db" }
+  ],
+  "observability": { "enabled": true }
+}
