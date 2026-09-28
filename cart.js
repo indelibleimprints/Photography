@@ -11,8 +11,9 @@ function formatPrice(price) {
 }
 
 // Sorts a shop's product list for display. "number" sorts by catalog id
-// (the order items were added); "price" sorts low-to-high or high-to-low,
-// with TBD-priced items always pushed to the end regardless of direction.
+// (the order items were added), with sold items always pushed to the end
+// regardless of direction; "price" sorts low-to-high or high-to-low, with
+// TBD-priced items always pushed to the end regardless of direction.
 function sortProducts(products, sortBy) {
   const sorted = products.slice();
   const isPriced = p => typeof p.price === "number";
@@ -21,6 +22,12 @@ function sortProducts(products, sortBy) {
     if (isPriced(a)) return -1;
     if (isPriced(b)) return 1;
     return 0;
+  };
+  const numberCompare = (a, b, dir) => {
+    if (!a.sold && !b.sold) return (a.id - b.id) * dir;
+    if (!a.sold) return -1;
+    if (!b.sold) return 1;
+    return (a.id - b.id) * dir;
   };
 
   switch (sortBy) {
@@ -31,11 +38,11 @@ function sortProducts(products, sortBy) {
       sorted.sort((a, b) => priceCompare(a, b, -1));
       break;
     case "number-desc":
-      sorted.sort((a, b) => b.id - a.id);
+      sorted.sort((a, b) => numberCompare(a, b, -1));
       break;
     case "number-asc":
     default:
-      sorted.sort((a, b) => a.id - b.id);
+      sorted.sort((a, b) => numberCompare(a, b, 1));
   }
   return sorted;
 }
