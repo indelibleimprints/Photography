@@ -10,10 +10,12 @@ function formatPrice(price) {
   return typeof price === "number" ? `$${price.toFixed(2)}` : "TBD";
 }
 
-// Sorts a shop's product list for display. "number" sorts by catalog id
-// (the order items were added), with sold items always pushed to the end
-// regardless of direction; "price" sorts low-to-high or high-to-low, with
-// TBD-priced items always pushed to the end regardless of direction.
+// Sorts a shop's product list for display. "number" groups items by the
+// letter prefix in their name (D1-D67 together, then T1-T6, etc.,
+// alphabetically) and sorts by the numeric part within each group, with
+// sold items always pushed to the end regardless of direction; "price"
+// sorts low-to-high or high-to-low, with TBD-priced items always pushed
+// to the end regardless of direction.
 function sortProducts(products, sortBy) {
   const sorted = products.slice();
   const isPriced = p => typeof p.price === "number";
@@ -23,8 +25,17 @@ function sortProducts(products, sortBy) {
     if (isPriced(b)) return 1;
     return 0;
   };
+  const numberKey = item => {
+    const match = item.name.match(/^([A-Za-z]*)(\d+)/);
+    return match ? { prefix: match[1], num: parseInt(match[2], 10) } : { prefix: item.name, num: item.id };
+  };
   const numberCompare = (a, b, dir) => {
-    if (!a.sold && !b.sold) return (a.id - b.id) * dir;
+    if (!a.sold && !b.sold) {
+      const ka = numberKey(a);
+      const kb = numberKey(b);
+      if (ka.prefix !== kb.prefix) return ka.prefix.localeCompare(kb.prefix);
+      return (ka.num - kb.num) * dir;
+    }
     if (!a.sold) return -1;
     if (!b.sold) return 1;
     return (a.id - b.id) * dir;
