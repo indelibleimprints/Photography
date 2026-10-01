@@ -303,9 +303,10 @@ const STREAM_ITEMS = [
   {
     id: 86,
     name: "S36",
-    price: 25.00,
+    price: 20.00,
     image: "/images/stream/S36.jpeg",
-    description: "Teal lampwork glass beads with a black accent bead, on silver leverback ear wires. Made live on stream."
+    description: "Teal lampwork glass beads with a black accent bead, on silver leverback ear wires. Made live on stream.",
+    sold: true
   },
   {
     id: 87,
