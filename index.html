@@ -3,71 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indelible Imprints</title>
+  <title>Indelible Imprints | Photography</title>
+  <meta name="description" content="Indelible Imprints photography: weddings, portraits, and events, plus handmade jewelry shops.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Static Background (fixed, does not scroll) -->
-  <div class="page-background"></div>
 
   <!-- Header -->
-  <header>
-    <nav>
-      <a href="#" class="brand">
-        <img src="images/logo.jpeg" alt="Indelible Imprints Logo" class="logo">
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#top" class="brand">
+        <img src="images/logo.jpeg" alt="Indelible Imprints logo" class="brand-logo">
         <span class="brand-name">Indelible Imprints</span>
       </a>
-      <ul>
+      <ul class="nav-links">
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#shops">Shops</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="shop.html">Shop</a></li>
+        <li><a href="shop.html" class="nav-cta">Shop</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section with Sunset Background -->
-  <section class="hero">
-    <h2>Indelible Imprints</h2>
-    <p>Capturing moments that last forever – weddings, portraits, and events.</p>
-    <a href="#gallery" class="btn">View Gallery</a>
-  </section>
+  <main id="top">
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="gallery">
-    <h2>Gallery</h2>
-    <div class="grid">
-      <img src="images/photo1.jpg" alt="Ocean waves at sunset">
-      <img src="images/photo2.jpg" alt="Aerial sunset view">
-      <img src="images/photo3.jpg" alt="City sunset">
-      <img src="images/photo4.jpg" alt="Illuminated dragon lantern sculpture at dusk">
-    </div>
-  </section>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Photography &middot; North Carolina</p>
+        <h1>Moments that<br><em>leave a mark.</em></h1>
+        <p class="lede">Weddings, portraits, and events, photographed with an eye for golden light and the quiet details you'll want to keep forever.</p>
+        <div class="hero-actions">
+          <a href="#gallery" class="btn btn-dark">View Gallery</a>
+          <a href="#contact" class="btn btn-line">Book a Session</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="images/photo1.jpg" alt="Ocean waves rolling onto the beach at sunset">
+      </figure>
+    </section>
 
-  <!-- Pricing Section -->
-  <section id="pricing" class="pricing">
-    <h2>Pricing</h2>
-    <ul>
-      <li><strong>Portrait Session:</strong> $200</li>
-      <li><strong>Wedding Package:</strong> $1200</li>
-      <li><strong>Event Coverage:</strong> $500</li>
-    </ul>
-  </section>
+    <!-- Gallery -->
+    <section id="gallery" class="section gallery">
+      <div class="section-head">
+        <p class="eyebrow">Selected work</p>
+        <h2>Gallery</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="g-wide"><img src="images/photo2.jpg" alt="Aerial view of the city at sunset" loading="lazy"></figure>
+        <figure class="g-tall"><img src="images/photo4.jpg" alt="Illuminated dragon lantern sculpture at dusk" loading="lazy"></figure>
+        <figure class="g-wide"><img src="images/photo3.jpg" alt="Wispy clouds across a blue sky" loading="lazy"></figure>
+      </div>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:vetvisualstoryteller@gmail.com">Malinda@indelibleimprints.com</a></p>
-    <p>Phone: (980)458-2465</p>
-  </section>
+      <!-- Style / event galleries: add a new card here for each new album page -->
+      <h3 class="albums-title">Browse by style</h3>
+      <div class="album-grid">
+        <a class="album-card" href="r4tg2026.html">
+          <img src="images/r4tg2026/thumbs/img-5374.jpg" alt="Runners crossing the finish line at R4TG 2026" loading="lazy">
+          <div class="album-card-text">
+            <span class="album-tag">Events</span>
+            <h4>R4TG 2026</h4>
+            <span class="album-count">15 photos &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section pricing">
+      <div class="section-head">
+        <p class="eyebrow">Sessions</p>
+        <h2>Pricing</h2>
+      </div>
+      <div class="price-grid">
+        <article class="price-card">
+          <h3>Portrait Session</h3>
+          <p class="price">$200</p>
+          <p>Individuals, couples, and families.</p>
+        </article>
+        <article class="price-card featured">
+          <h3>Wedding Package</h3>
+          <p class="price">$1,200</p>
+          <p>Your day, from getting ready to the last dance.</p>
+        </article>
+        <article class="price-card">
+          <h3>Event Coverage</h3>
+          <p class="price">$500</p>
+          <p>Parties, celebrations, and gatherings.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Shops (links kept from the existing site) -->
+    <section id="shops" class="section shops">
+      <div class="section-head">
+        <p class="eyebrow">Handmade &amp; found</p>
+        <h2>Our Shops</h2>
+      </div>
+      <div class="shop-grid">
+        <a class="shop-card" href="vetvisualshop/index.html">
+          <span class="shop-num">01</span>
+          <h3>Vet Visual Shop</h3>
+          <p>Handmade earrings, made on stream</p>
+          <span class="shop-go">Browse &rarr;</span>
+        </a>
+        <a class="shop-card" href="wirewrapped/index.html">
+          <span class="shop-num">02</span>
+          <h3>Wire Wrapped Jewelry</h3>
+          <p>Original wire-wrapped pieces</p>
+          <span class="shop-go">Browse &rarr;</span>
+        </a>
+        <a class="shop-card" href="resale/index.html">
+          <span class="shop-num">03</span>
+          <h3>Resale Finds</h3>
+          <p>Handpicked jewelry from craft shows</p>
+          <span class="shop-go">Browse &rarr;</span>
+        </a>
+      </div>
+      <div class="shop-links">
+        <a href="shop.html" class="btn btn-dark">All Shops</a>
+        <a href="cart.html" class="btn btn-line">View Cart</a>
+        <!-- TODO: add Beacons.ai button here: <a href="https://beacons.ai/YOURNAME" class="btn btn-line" target="_blank" rel="noopener">All Our Links</a> -->
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="contact-inner">
+        <p class="eyebrow">Let's work together</p>
+        <h2>Contact</h2>
+        <p class="contact-line"><a href="mailto:vetvisualstoryteller@gmail.com">Malinda@indelibleimprints.com</a></p>
+        <p class="contact-line"><a href="tel:+19804582465">(980) 458-2465</a></p>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
-  <footer>
-    <img src="images/logo.jpeg" alt="Indelible Imprints Logo" class="footer-logo">
-    <p>&copy; 2025 Indelible Imprints. All Rights Reserved.</p>
+  <footer class="site-footer">
+    <img src="images/logo.jpeg" alt="Indelible Imprints logo" class="footer-logo">
+    <p>&copy; 2026 Indelible Imprints. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
-
-
-
