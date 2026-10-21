@@ -395,6 +395,17 @@ h1, h2, h3 {
   margin: 0;
 }
 
+/* Dark variant for moody albums (e.g. Haunt & Horror) */
+.dark-album { background: #121010; color: #ece5da; }
+.dark-album .site-header { background: rgba(18, 16, 16, 0.92); border-bottom-color: #2c2725; }
+.dark-album .nav-links .nav-cta { border-color: #ece5da; }
+.dark-album .nav-links .nav-cta:hover { background: #ece5da; color: #121010; }
+.dark-album .eyebrow, .dark-album .album-note a { color: #d9534f; }
+.dark-album .section-head h2::after { background: #b3302c; }
+.dark-album .album-sub, .dark-album .album-note, .dark-album .site-footer { color: #a39a8f; }
+.dark-album .masonry a { background: #1d1a19; }
+.dark-album .back-link:hover { color: #ece5da; }
+
 /* ---------- Pricing ---------- */
 .pricing {
   max-width: none;
