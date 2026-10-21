@@ -524,6 +524,9 @@ h1, h2, h3 {
 }
 
 .site-footer p { margin: 0; }
+.site-footer .footer-links { margin-bottom: 0.5rem; }
+.footer-links a { color: var(--gold-deep); text-decoration: none; letter-spacing: 0.08em; }
+.footer-links a:hover { color: var(--ink); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
