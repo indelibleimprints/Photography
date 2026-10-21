@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R4TG 2026 | Indelible Imprints</title>
+  <meta name="description" content="Race day 2026 event photography by Indelible Imprints.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header (same as main page) -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="brand">
+        <img src="images/logo.jpeg" alt="Indelible Imprints logo" class="brand-logo">
+        <span class="brand-name">Indelible Imprints</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#shops">Shops</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="shop.html" class="nav-cta">Shop</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section album">
+      <div class="section-head">
+        <p class="eyebrow"><a href="index.html#gallery" class="back-link">&larr; All galleries</a></p>
+        <h2>R4TG 2026</h2>
+        <p class="album-sub">Event &middot; Race Day</p>
+      </div>
+
+      <!-- To add a photo: drop the full image in images/r4tg2026/ and a smaller copy in images/r4tg2026/thumbs/, then add a line below. -->
+      <div class="masonry" id="album">
+        <a href="images/r4tg2026/finish-line-sprint.jpg"><img src="images/r4tg2026/thumbs/finish-line-sprint.jpg" alt="Young runner sprinting to the finish line" loading="lazy"></a>
+        <a href="images/r4tg2026/img-5374.jpg"><img src="images/r4tg2026/thumbs/img-5374.jpg" alt="Three runners in green shirts crossing the finish arms up" loading="lazy"></a>
+        <a href="images/r4tg2026/img-5618.jpg"><img src="images/r4tg2026/thumbs/img-5618.jpg" alt="Runner in pink sunglasses flexing at the finish" loading="lazy"></a>
+        <a href="images/r4tg2026/img-3590.jpg"><img src="images/r4tg2026/thumbs/img-3590.jpg" alt="Young runner in a purple jacket finishing the race" loading="lazy"></a>
+        <a href="images/r4tg2026/img-5580.jpg"><img src="images/r4tg2026/thumbs/img-5580.jpg" alt="Runner finishing beside a young girl" loading="lazy"></a>
+        <a href="images/r4tg2026/img-5967.jpg"><img src="images/r4tg2026/thumbs/img-5967.jpg" alt="Runner pushing through the final stretch" loading="lazy"></a>
+        <a href="images/r4tg2026/img-6038.jpg"><img src="images/r4tg2026/thumbs/img-6038.jpg" alt="Runner celebrating with a fist pump at the finish" loading="lazy"></a>
+        <a href="images/r4tg2026/img-5376.jpg"><img src="images/r4tg2026/thumbs/img-5376.jpg" alt="Three runners holding hands as they finish" loading="lazy"></a>
+        <a href="images/r4tg2026/img-5972.jpg"><img src="images/r4tg2026/thumbs/img-5972.jpg" alt="Runner greeted with a hug after finishing" loading="lazy"></a>
+        <a href="images/r4tg2026/img-5753.jpg"><img src="images/r4tg2026/thumbs/img-5753.jpg" alt="Finisher posing with friends and a big-head cutout" loading="lazy"></a>
+        <a href="images/r4tg2026/img-6013.jpg"><img src="images/r4tg2026/thumbs/img-6013.jpg" alt="Two runners approaching the finish" loading="lazy"></a>
+        <a href="images/r4tg2026/img-5956.jpg"><img src="images/r4tg2026/thumbs/img-5956.jpg" alt="Finisher with medal posing with two friends" loading="lazy"></a>
+        <a href="images/r4tg2026/img-5957.jpg"><img src="images/r4tg2026/thumbs/img-5957.jpg" alt="Finisher with medal and friends smiling" loading="lazy"></a>
+        <a href="images/r4tg2026/img-6061.jpg"><img src="images/r4tg2026/thumbs/img-6061.jpg" alt="Family high-fiving a volunteer" loading="lazy"></a>
+        <a href="images/r4tg2026/img-6062.jpg"><img src="images/r4tg2026/thumbs/img-6062.jpg" alt="Family celebrating with a volunteer after the race" loading="lazy"></a>
+      </div>
+
+      <p class="album-note">See yourself here? For full-resolution prints or digital copies, <a href="index.html#contact">get in touch</a>.</p>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-btn lb-close" aria-label="Close">&times;</button>
+    <button class="lb-btn lb-prev" aria-label="Previous photo">&#8249;</button>
+    <img class="lb-img" alt="">
+    <button class="lb-btn lb-next" aria-label="Next photo">&#8250;</button>
+    <p class="lb-count"></p>
+  </div>
+
+  <footer class="site-footer">
+    <img src="images/logo.jpeg" alt="Indelible Imprints logo" class="footer-logo">
+    <p>&copy; 2026 Indelible Imprints. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('#album a'));
+      var lb = document.getElementById('lightbox');
+      var img = lb.querySelector('.lb-img');
+      var count = lb.querySelector('.lb-count');
+      var i = 0, startX = null;
+
+      function show(n) {
+        i = (n + links.length) % links.length;
+        img.src = links[i].href;
+        img.alt = links[i].querySelector('img').alt;
+        count.textContent = (i + 1) + ' / ' + links.length;
+      }
+      function open(n) { show(n); lb.hidden = false; document.body.style.overflow = 'hidden'; }
+      function close() { lb.hidden = true; img.src = ''; document.body.style.overflow = ''; }
+
+      links.forEach(function (a, n) {
+        a.addEventListener('click', function (e) { e.preventDefault(); open(n); });
+      });
+      lb.querySelector('.lb-close').onclick = close;
+      lb.querySelector('.lb-prev').onclick = function () { show(i - 1); };
+      lb.querySelector('.lb-next').onclick = function () { show(i + 1); };
+      lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (lb.hidden) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(i - 1);
+        if (e.key === 'ArrowRight') show(i + 1);
+      });
+      lb.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+      lb.addEventListener('touchend', function (e) {
+        if (startX === null) return;
+        var dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 50) show(dx < 0 ? i + 1 : i - 1);
+        startX = null;
+      });
+      // Discourage right-click saving of photos
+      document.addEventListener('contextmenu', function (e) {
+        if (e.target.tagName === 'IMG') e.preventDefault();
+      });
+    })();
+  </script>
+</body>
+</html>
